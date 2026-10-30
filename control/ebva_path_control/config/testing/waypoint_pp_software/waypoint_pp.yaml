@@ -1,0 +1,15 @@
+/waypoint_pp_software/waypoint_pp:
+  ros__parameters:
+    path_frame_id: fixture_map
+    body_frame_id: fixture_rear_axle_flu
+    model_point: software_fixture_rear_axle
+    path_contract: ordered_closed_xy_si_v1
+    path_origin: shared_reference_frame
+    path_direction: csv_order
+    pose_contract: cartesian_body_pose_si_v1
+    pose_topic: state/pose
+    command_topic: control/autonomy/ackermann
+    observation_timeout: 0.2
+    future_slack: 0.02
+    use_sim_time: true
+    csv_path: package://ebva_path_control/data/testing/waypoint_pp_reference.csv

@@ -1,0 +1,10 @@
+version: 1
+name: sensors
+namespace: /
+launches:
+- id: lidar
+  package: ebva_sensors
+  file: launch/lidar.launch.py
+- id: zed
+  package: ebva_sensors
+  file: launch/zed.launch.py

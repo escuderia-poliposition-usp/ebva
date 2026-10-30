@@ -1,0 +1,32 @@
+version: 1
+name: stanley_frenet_software
+namespace: /stanley_frenet_software
+nodes:
+- id: ackermann_adapter
+  package: ebva_vehicle_control
+  executable: ackermann_adapter
+  name: ackermann_adapter
+  parameters:
+  - package: ebva_vehicle_control
+    file: config/testing/stanley_frenet_software/ackermann_adapter.yaml
+- id: command_authority
+  package: ebva_vehicle_control
+  executable: command_authority
+  name: command_authority
+  parameters:
+  - package: ebva_vehicle_control
+    file: config/testing/stanley_frenet_software/command_authority.yaml
+- id: vesc_backend
+  package: ebva_vehicle_control
+  executable: vesc_backend
+  name: vesc_backend
+  parameters:
+  - package: ebva_vehicle_control
+    file: config/testing/stanley_frenet_software/vesc_backend.yaml
+- id: stanley_frenet
+  package: ebva_path_control
+  executable: stanley_frenet
+  name: stanley_frenet
+  parameters:
+  - package: ebva_path_control
+    file: config/testing/stanley_frenet_software/stanley_frenet.yaml

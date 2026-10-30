@@ -1,0 +1,12 @@
+/**:
+  ros__parameters:
+    start_x: 0.0
+    start_y: 0.0
+    start_yaw: 0.0
+    wheelbase: 0.26
+    map_frame: map
+    base_frame: zed_camera_link
+    rate_hz: 50.0
+    steering_gain: -1.2135
+    steering_offset: 0.5304
+    erpm_per_ms: 4614.0

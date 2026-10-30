@@ -1,0 +1,10 @@
+version: 1
+name: signs
+namespace: /
+launches:
+- id: zed
+  package: ebva_sensors
+  file: launch/zed.launch.py
+- id: signs
+  package: ebva_sign_detection
+  file: launch/detector.launch.py

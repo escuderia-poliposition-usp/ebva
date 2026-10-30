@@ -1,0 +1,11 @@
+version: 1
+name: direct_commands
+namespace: /ebva
+launches:
+- id: vesc_driver
+  package: ebva_vehicle_control
+  file: launch/vesc_driver.launch.py
+  arguments:
+    params_file:
+      package: ebva_vehicle_control
+      file: config/vehicle/manual_core.yaml

@@ -1,0 +1,185 @@
+{
+  "fixture": [
+    [
+      0.0,
+      0.0
+    ],
+    [
+      3.0,
+      0.0
+    ],
+    [
+      3.0,
+      3.0
+    ],
+    [
+      0.0,
+      3.0
+    ],
+    [
+      0.0,
+      0.0
+    ]
+  ],
+  "preserved_center_sha256": "810ae428f5a46f5cd0028f4447c13f24a90174a6fc2dbc1dd6f56cf4023bbc1b",
+  "cases": [
+    {
+      "reference": "fixture",
+      "label": "left",
+      "x": 0.5,
+      "y": -0.2,
+      "yaw": 0.0,
+      "legacy_throttle": 0.09678678133329885,
+      "legacy_steering": -0.4664926316885905,
+      "speed_target": 1.935735626665977,
+      "steering_angle": 0.4664926316885905
+    },
+    {
+      "reference": "fixture",
+      "label": "right",
+      "x": 0.5,
+      "y": 0.2,
+      "yaw": 0.0,
+      "legacy_throttle": 0.09678678133329885,
+      "legacy_steering": 0.46649134858166286,
+      "speed_target": 1.935735626665977,
+      "steering_angle": -0.46649134858166286
+    },
+    {
+      "reference": "fixture",
+      "label": "aligned",
+      "x": 0.5,
+      "y": 0.0,
+      "yaw": 0.0,
+      "legacy_throttle": 0.09678678133329885,
+      "legacy_steering": -0.0,
+      "speed_target": 1.935735626665977,
+      "steering_angle": 0.0
+    },
+    {
+      "reference": "fixture",
+      "label": "rotated_left",
+      "x": 3.2,
+      "y": 0.5,
+      "yaw": 1.5707963267948966,
+      "legacy_throttle": 0.09678678133329885,
+      "legacy_steering": -0.46649134858166347,
+      "speed_target": 1.935735626665977,
+      "steering_angle": 0.46649134858166347
+    },
+    {
+      "reference": "fixture",
+      "label": "rotated_right",
+      "x": 2.8,
+      "y": 0.5,
+      "yaw": 1.5707963267948966,
+      "legacy_throttle": 0.09678678133329885,
+      "legacy_steering": 0.4664926316885908,
+      "speed_target": 1.935735626665977,
+      "steering_angle": -0.4664926316885908
+    },
+    {
+      "reference": "fixture",
+      "label": "corner",
+      "x": 2.8,
+      "y": -0.1,
+      "yaw": 0.2,
+      "legacy_throttle": 0.09678678133329885,
+      "legacy_steering": -0.8005443912077141,
+      "speed_target": 1.935735626665977,
+      "steering_angle": 0.8005443912077141
+    },
+    {
+      "reference": "fixture",
+      "label": "closure",
+      "x": -0.1,
+      "y": 0.3,
+      "yaw": -1.5707963267948966,
+      "legacy_throttle": 0.09678678133329885,
+      "legacy_steering": -0.7889461595231599,
+      "speed_target": 1.935735626665977,
+      "steering_angle": 0.7889461595231599
+    },
+    {
+      "reference": "fixture",
+      "label": "reverse_heading",
+      "x": 0.5,
+      "y": 0.0,
+      "yaw": 3.141592653589793,
+      "legacy_throttle": 0.09678678133329885,
+      "legacy_steering": -0.0,
+      "speed_target": 1.935735626665977,
+      "steering_angle": 0.0
+    },
+    {
+      "reference": "fixture",
+      "label": "far_fallback",
+      "x": 8.0,
+      "y": -3.0,
+      "yaw": 0.0,
+      "legacy_throttle": 0.09678678133329885,
+      "legacy_steering": -1.4391712075290282,
+      "speed_target": 1.935735626665977,
+      "steering_angle": 1.4391712075290282
+    },
+    {
+      "reference": "fixture",
+      "label": "at_vertex",
+      "x": 3.0,
+      "y": 0.0,
+      "yaw": 1.5707963267948966,
+      "legacy_throttle": 0.09678678133329885,
+      "legacy_steering": -0.0,
+      "speed_target": 1.935735626665977,
+      "steering_angle": 0.0
+    },
+    {
+      "reference": "fixture",
+      "label": "reacquire_limit",
+      "x": 10000000000.0,
+      "y": 10000000000.0,
+      "yaw": 0.0,
+      "legacy_throttle": 0.0,
+      "legacy_steering": -0.0,
+      "speed_target": 0.0,
+      "steering_angle": 0.0
+    },
+    {
+      "reference": "preserved_center",
+      "label": "center_origin",
+      "x": 0.0,
+      "y": 0.0,
+      "yaw": 1.779,
+      "legacy_throttle": 0.23798182291120068,
+      "legacy_steering": 0.02155255964198858,
+      "speed_target": 4.759636458224014,
+      "steering_angle": -0.02155255964198858
+    },
+    {
+      "reference": "preserved_center",
+      "label": "center_offset",
+      "x": 0.2,
+      "y": 0.0,
+      "yaw": 1.779,
+      "legacy_throttle": 0.23047633071009024,
+      "legacy_steering": -0.4459869797876496,
+      "speed_target": 4.609526614201805,
+      "steering_angle": 0.4459869797876496
+    },
+    {
+      "reference": "preserved_center",
+      "label": "center_rotation",
+      "x": 0.0,
+      "y": 0.0,
+      "yaw": 1.3,
+      "legacy_throttle": 0.23798182291120068,
+      "legacy_steering": -0.5112511884696785,
+      "speed_target": 4.759636458224014,
+      "steering_angle": 0.5112511884696785
+    }
+  ],
+  "confirmed_defects": {
+    "duplicate_segment_original_nearest_point_nonfinite": true,
+    "stamp_frame_original_callback": "not inspected before calculatePurePursuit/publish; no source-age or frame validation"
+  }
+}

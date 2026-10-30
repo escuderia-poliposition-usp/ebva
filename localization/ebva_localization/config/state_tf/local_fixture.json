@@ -1,0 +1,58 @@
+{
+  "profile_id": "synthetic_state_tf",
+  "local_frame": "fixture_odom",
+  "global_frame": null,
+  "body_frame": "fixture_rear_axle_flu",
+  "require_tf": true,
+  "static_lifetime": "publisher_present",
+  "future_tolerance_sec": 0.02,
+  "edges": [
+    {
+      "parent": "fixture_odom",
+      "child": "fixture_rear_axle_flu",
+      "kind": "dynamic",
+      "publisher": "/tf_contract_fixture/local_estimator",
+      "max_age_sec": 0.25
+    },
+    {
+      "parent": "fixture_rear_axle_flu",
+      "child": "fixture_laser",
+      "kind": "static",
+      "publisher": "/tf_contract_fixture/extrinsics"
+    }
+  ],
+  "state_ports": [
+    {
+      "name": "local_motion",
+      "publisher": "/tf_contract_fixture/local_estimator",
+      "topic": "/tf_contract_fixture/state/local",
+      "type": "nav_msgs/Odometry",
+      "role": "local",
+      "frame": "fixture_odom",
+      "body": "fixture_rear_axle_flu",
+      "model_point": "software_fixture_rear_axle",
+      "stamp": "measurement",
+      "provides": [
+        "pose",
+        "pose_covariance",
+        "longitudinal_velocity"
+      ],
+      "twist_frame": "fixture_rear_axle_flu",
+      "max_age_sec": 0.2
+    }
+  ],
+  "consumers": [
+    {
+      "name": "cbf_yaw_rate",
+      "port": "local_motion",
+      "type": "nav_msgs/Odometry",
+      "frame": "fixture_odom",
+      "body": "fixture_rear_axle_flu",
+      "model_point": "software_fixture_rear_axle",
+      "needs": [
+        "longitudinal_velocity"
+      ],
+      "max_age_sec": 0.2
+    }
+  ]
+}

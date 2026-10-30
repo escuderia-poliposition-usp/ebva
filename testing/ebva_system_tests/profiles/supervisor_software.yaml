@@ -1,0 +1,32 @@
+version: 1
+name: supervisor_software
+namespace: /supervisor_software
+nodes:
+- id: supervisor
+  package: ebva_supervisor
+  executable: supervisor_node
+  name: supervisor
+  parameters:
+  - package: ebva_supervisor
+    file: config/testing/supervisor_software/supervisor.yaml
+- id: supervisor_effort_adapter
+  package: ebva_vehicle_control
+  executable: supervisor_effort_adapter
+  name: supervisor_effort_adapter
+  parameters:
+  - package: ebva_vehicle_control
+    file: config/testing/supervisor_software/supervisor_effort_adapter.yaml
+- id: command_authority
+  package: ebva_vehicle_control
+  executable: command_authority
+  name: command_authority
+  parameters:
+  - package: ebva_vehicle_control
+    file: config/testing/supervisor_software/command_authority.yaml
+- id: vesc_backend
+  package: ebva_vehicle_control
+  executable: vesc_backend
+  name: vesc_backend
+  parameters:
+  - package: ebva_vehicle_control
+    file: config/testing/supervisor_software/vesc_backend.yaml

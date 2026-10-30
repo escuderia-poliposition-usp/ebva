@@ -1,0 +1,83 @@
+{
+  "kind": "synthetic_indexed_lidar_not_vehicle_calibration",
+  "origin_ros_s": 2000.0,
+  "duration_s": 8.0,
+  "scan_period_s": 0.04,
+  "rc_period_s": 0.03,
+  "manual_rc_interval_s": [
+    3.6,
+    4.0
+  ],
+  "phases": [
+    {
+      "start": 0.0,
+      "end": 1.5,
+      "front": 5.0,
+      "lateral": 0.0,
+      "mode": "valid"
+    },
+    {
+      "start": 1.5,
+      "end": 2.5,
+      "front": 5.0,
+      "lateral": 0.05,
+      "mode": "valid"
+    },
+    {
+      "start": 2.5,
+      "end": 3.5,
+      "front": 5.0,
+      "lateral": -0.05,
+      "mode": "valid"
+    },
+    {
+      "start": 3.5,
+      "end": 4.6,
+      "front": 5.0,
+      "lateral": 0.0,
+      "mode": "valid"
+    },
+    {
+      "start": 4.6,
+      "end": 5.0,
+      "front": 10.0,
+      "lateral": 0.0,
+      "mode": "valid"
+    },
+    {
+      "start": 5.0,
+      "end": 5.4,
+      "front": 0.01,
+      "lateral": 0.0,
+      "mode": "valid"
+    },
+    {
+      "start": 5.4,
+      "end": 6.0,
+      "front": 5.0,
+      "lateral": 0.0,
+      "mode": "nan"
+    },
+    {
+      "start": 6.0,
+      "end": 6.4,
+      "front": 5.0,
+      "lateral": 0.0,
+      "mode": "stale"
+    },
+    {
+      "start": 6.4,
+      "end": 7.1,
+      "front": 5.0,
+      "lateral": 0.0,
+      "mode": "valid"
+    },
+    {
+      "start": 7.1,
+      "end": 8.0,
+      "front": 5.0,
+      "lateral": 0.0,
+      "mode": "silence"
+    }
+  ]
+}

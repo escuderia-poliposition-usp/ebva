@@ -1,0 +1,324 @@
+{
+  "waypoints": [
+    [
+      0.0,
+      0.0
+    ],
+    [
+      0.4,
+      0.1
+    ],
+    [
+      1.0,
+      0.3
+    ],
+    [
+      2.0,
+      0.5
+    ],
+    [
+      3.0,
+      0.0
+    ],
+    [
+      3.0,
+      -1.0
+    ]
+  ],
+  "waypoint_cases": [
+    {
+      "mode": "carrot",
+      "x": 0,
+      "y": -0.2,
+      "yaw": 0,
+      "output": {
+        "steering": 0.41,
+        "longitudinal": 0.2
+      }
+    },
+    {
+      "mode": "carrot",
+      "x": 0,
+      "y": 0.2,
+      "yaw": 0,
+      "output": {
+        "steering": 0.149502978736743,
+        "longitudinal": 0.2
+      }
+    },
+    {
+      "mode": "carrot",
+      "x": 0.5,
+      "y": -0.6,
+      "yaw": 0.2,
+      "output": {
+        "steering": 0.41,
+        "longitudinal": 0.2
+      }
+    },
+    {
+      "mode": "carrot",
+      "x": 0.5,
+      "y": 0.6,
+      "yaw": -0.2,
+      "output": {
+        "steering": 0.2001477543362644,
+        "longitudinal": 0.2
+      }
+    },
+    {
+      "mode": "carrot",
+      "x": 1,
+      "y": 0,
+      "yaw": 0.7,
+      "output": {
+        "steering": -0.3545285864987908,
+        "longitudinal": 0.2
+      }
+    },
+    {
+      "mode": "carrot",
+      "x": 1,
+      "y": 0,
+      "yaw": -0.7,
+      "output": {
+        "steering": 0.41,
+        "longitudinal": 0.2
+      }
+    },
+    {
+      "mode": "carrot",
+      "x": 2.9,
+      "y": 0,
+      "yaw": 0,
+      "output": {
+        "steering": -0.41,
+        "longitudinal": 0.2
+      }
+    },
+    {
+      "mode": "carrot",
+      "x": 5,
+      "y": 0,
+      "yaw": 0,
+      "output": null
+    },
+    {
+      "mode": "carrot",
+      "x": 0,
+      "y": 0,
+      "yaw": 3.141592653589793,
+      "output": null
+    },
+    {
+      "mode": "stanley",
+      "x": 0,
+      "y": -0.2,
+      "yaw": 0,
+      "output": {
+        "steering": 0.41,
+        "longitudinal": 0.2
+      }
+    },
+    {
+      "mode": "stanley",
+      "x": 0,
+      "y": 0.2,
+      "yaw": 0,
+      "output": {
+        "steering": 0.29706421234104274,
+        "longitudinal": 0.2
+      }
+    },
+    {
+      "mode": "stanley",
+      "x": 0.5,
+      "y": -0.6,
+      "yaw": 0.2,
+      "output": {
+        "steering": 0.41,
+        "longitudinal": 0.2
+      }
+    },
+    {
+      "mode": "stanley",
+      "x": 0.5,
+      "y": 0.6,
+      "yaw": -0.2,
+      "output": {
+        "steering": 0.41,
+        "longitudinal": 0.2
+      }
+    },
+    {
+      "mode": "stanley",
+      "x": 1,
+      "y": 0,
+      "yaw": 0.7,
+      "output": {
+        "steering": -0.41,
+        "longitudinal": 0.2
+      }
+    },
+    {
+      "mode": "stanley",
+      "x": 1,
+      "y": 0,
+      "yaw": -0.7,
+      "output": {
+        "steering": 0.41,
+        "longitudinal": 0.2
+      }
+    },
+    {
+      "mode": "stanley",
+      "x": 2.9,
+      "y": 0,
+      "yaw": 0,
+      "output": {
+        "steering": -0.41,
+        "longitudinal": 0.2
+      }
+    },
+    {
+      "mode": "stanley",
+      "x": 5,
+      "y": 0,
+      "yaw": 0,
+      "output": null
+    },
+    {
+      "mode": "stanley",
+      "x": 0,
+      "y": 0,
+      "yaw": 3.141592653589793,
+      "output": null
+    },
+    {
+      "mode": "pure_pursuit",
+      "x": 0,
+      "y": -0.2,
+      "yaw": 0,
+      "output": {
+        "steering": 0.41,
+        "longitudinal": 0.2
+      }
+    },
+    {
+      "mode": "pure_pursuit",
+      "x": 0,
+      "y": 0.2,
+      "yaw": 0,
+      "output": {
+        "steering": 0.10276174500871285,
+        "longitudinal": 0.2
+      }
+    },
+    {
+      "mode": "pure_pursuit",
+      "x": 0.5,
+      "y": -0.6,
+      "yaw": 0.2,
+      "output": {
+        "steering": 0.41,
+        "longitudinal": 0.2
+      }
+    },
+    {
+      "mode": "pure_pursuit",
+      "x": 0.5,
+      "y": 0.6,
+      "yaw": -0.2,
+      "output": {
+        "steering": 0.2033952559532529,
+        "longitudinal": 0.2
+      }
+    },
+    {
+      "mode": "pure_pursuit",
+      "x": 1,
+      "y": 0,
+      "yaw": 0.7,
+      "output": {
+        "steering": -0.2636910841785288,
+        "longitudinal": 0.2
+      }
+    },
+    {
+      "mode": "pure_pursuit",
+      "x": 1,
+      "y": 0,
+      "yaw": -0.7,
+      "output": {
+        "steering": 0.41,
+        "longitudinal": 0.2
+      }
+    },
+    {
+      "mode": "pure_pursuit",
+      "x": 2.9,
+      "y": 0,
+      "yaw": 0,
+      "output": {
+        "steering": -0.41,
+        "longitudinal": 0.2
+      }
+    },
+    {
+      "mode": "pure_pursuit",
+      "x": 5,
+      "y": 0,
+      "yaw": 0,
+      "output": null
+    },
+    {
+      "mode": "pure_pursuit",
+      "x": 0,
+      "y": 0,
+      "yaw": 3.141592653589793,
+      "output": null
+    }
+  ],
+  "lidar_cases": [
+    {
+      "left": 2.0,
+      "right": 2.0,
+      "output": {
+        "longitudinal": 0.4,
+        "steering": 0.0
+      }
+    },
+    {
+      "left": 3.0,
+      "right": 1.0,
+      "output": {
+        "longitudinal": 0.4,
+        "steering": 0.29849893158617924
+      }
+    },
+    {
+      "left": 1.0,
+      "right": 3.0,
+      "output": {
+        "longitudinal": 0.4,
+        "steering": -0.29849893158617924
+      }
+    },
+    {
+      "left": 10.0,
+      "right": 0.2,
+      "output": {
+        "longitudinal": 0.4,
+        "steering": 0.9851522094403644
+      }
+    },
+    {
+      "left": 0.2,
+      "right": 10.0,
+      "output": {
+        "longitudinal": 0.4,
+        "steering": -0.9851522094403644
+      }
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+# Preencha valores null com medidas da câmera e do tabuleiro utilizados.
+lidar:
+  lidar_topic: /scan
+camera:
+  camera_topic: /camera/image_raw
+  image_size:
+    width: null
+    length: null
+  chessboard:
+    rows: null
+    columns: null
+    square_size_m: null
+general:
+  config_folder: ./calibration
+  data_folder: ./captures
+  slop: 0.1
+  max_file_saved: 20
+  camera_intrinsic_calibration: camera_intrinsics.yaml

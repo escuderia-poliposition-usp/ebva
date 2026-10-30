@@ -1,0 +1,23 @@
+/supervisor_software/vesc_backend:
+  ros__parameters:
+    rc_timeout_s: 0.2
+    autonomy_timeout_s: 0.2
+    rc_center_us: 1500.0
+    override_enter_us: 100.0
+    override_release_us: 80.0
+    enforce_graph: true
+    rc_publisher_name: supervisor_fixture
+    use_sim_time: false
+    auto_enable_on_startup: false
+    backend_timeout_s: 0.2
+    erpm_per_us: -8.0
+    throttle_center: 1500.0
+    throttle_deadband: 100.0
+    steering_min_us: 1100.0
+    steering_max_us: 1900.0
+    steering_min_servo: 0.15
+    steering_max_servo: 0.85
+    servo_center: 0.5
+    erpm_limit: 600.0
+    servo_min: 0.4
+    servo_max: 0.6

@@ -1,0 +1,87 @@
+/**:
+  ros__parameters:
+
+    brightness: 4
+    contrast: 4
+    hue: 0
+    saturation: 4
+    sharpness: 4
+    gamma: 8
+    auto_exposure_gain: true
+    gain: 100
+    exposure: 100
+    auto_whitebalance: true
+    whitebalance_temperature: 42
+    depth_confidence: 50
+    depth_texture_conf: 100
+    point_cloud_freq: 10.0
+
+    general:
+      camera_name: zedm
+      zed_id: 0
+      serial_number: 0
+      gpu_id: -1
+      base_frame: base_link
+      sdk_verbose: 1
+      svo_compression: 2
+      self_calib: true
+      camera_flip: AUTO
+      pub_resolution: CUSTOM
+      pub_downscale_factor: 2.0
+      pub_frame_rate: 15.0
+      svo_realtime: true
+      region_of_interest: '[]'
+
+    depth:
+      depth_mode: ULTRA
+      depth_stabilization: 1
+      openni_depth_mode: false
+
+    pos_tracking:
+      pos_tracking_enabled: true
+      pos_tracking_mode: GEN_2
+      set_gravity_as_origin: true
+      imu_fusion: true
+      publish_tf: false
+      publish_map_tf: true
+      map_frame: map
+      odometry_frame: odom
+      area_memory_db_path: ''
+      save_area_memory_db_on_exit: false
+      area_memory: true
+      floor_alignment: false
+      initial_base_pose: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+      init_odom_with_first_valid_pose: true
+      path_pub_rate: 2.0
+      path_max_count: -1
+      two_d_mode: false
+      fixed_z_value: 0.0
+      depth_min_range: 0.0
+      set_as_static: false
+
+    mapping:
+      mapping_enabled: false
+      resolution: 0.05
+      max_mapping_range: -1
+      fused_pointcloud_freq: 1.0
+      clicked_point_topic: /clicked_point
+
+    sensors:
+      sensors_timestamp_sync: false
+      max_pub_rate: 200.0
+      publish_imu_tf: true
+
+    object_detection:
+      od_enabled: false
+      model: MULTI_CLASS_BOX_ACCURATE
+      max_range: 15.0
+      allow_reduced_precision_inference: true
+      prediction_timeout: 0.5
+      object_tracking_enabled: true
+      mc_people: true
+      mc_vehicle: true
+      mc_bag: true
+      mc_animal: true
+      mc_electronics: true
+      mc_fruit_vegetable: true
+      mc_sport: true

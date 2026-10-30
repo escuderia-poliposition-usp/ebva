@@ -1,0 +1,6 @@
+# Publicação manual opcional. start_recording configura seu próprio monitor.
+resource_monitor:
+  ros__parameters:
+    use_sim_time: false
+    interval_s: 1.0
+    storage_path: /

@@ -1,0 +1,10 @@
+/cbf_yaw_rate_margin_software/cbf_yaw_rate_margin:
+  ros__parameters:
+    control_frame: fixture_rear_axle_flu
+    velocity_parent_frame: fixture_odom
+    model_reference_point: rear_axle_center
+    scan_geometry: coincident_aligned
+    timeout_s: 0.2
+    future_tolerance_s: 0.02
+    max_skew_s: 0.08
+    use_sim_time: true

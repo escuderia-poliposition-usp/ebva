@@ -1,0 +1,25 @@
+version: 1
+name: slam_mapping_ekf
+namespace: /
+launches:
+- id: vehicle
+  package: ebva_vehicle_control
+  file: launch/manual.launch.py
+- id: lidar
+  package: ebva_sensors
+  file: launch/lidar_mapping_zed.launch.py
+- id: zed
+  package: ebva_sensors
+  file: launch/zed_measurements.launch.py
+- id: wheel
+  package: ebva_vehicle_control
+  file: launch/wheel_odometry.launch.py
+- id: imu_si
+  package: ebva_sensors
+  file: launch/imu_si.launch.py
+- id: ekf
+  package: ebva_localization
+  file: launch/ekf.launch.py
+- id: mapping
+  package: ebva_localization
+  file: launch/mapping_ekf.launch.py

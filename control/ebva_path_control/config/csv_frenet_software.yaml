@@ -1,0 +1,14 @@
+# Synthetic reference only. No sensor, RC acquisition, driver or actuator map.
+csv_frenet_pp:
+  ros__parameters:
+    reference_frame_id: fixture_odom
+    body_frame_id: fixture_rear_axle
+    model_point: software_fixture_rear_axle
+    reference_contract: closed_progress_si_v1
+    progress_origin: first_accepted_odometry_s0
+    progress_direction: path_order
+    observation_timeout: 0.2
+    future_slack: 0.02
+    odometry_topic: odometry
+    command_topic: ackermann_command
+# csv_path must be supplied explicitly. See data/csv_frenet_fixture/reference.csv.

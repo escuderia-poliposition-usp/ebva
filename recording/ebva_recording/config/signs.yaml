@@ -1,0 +1,19 @@
+version: 2
+output_root: ~/rosbags
+session_prefix: placas
+duration_s: 60.0
+discovery_timeout_s: 5.0
+min_free_mib: 2048
+max_bag_size: 1073741824
+max_cache_size: 104857600
+interval_s: 1.0
+topics:
+- /zed/zed_node/rgb/color/rect/image
+- /yolo/detections
+- /yolo/annotated_image
+process_patterns:
+- zed
+- sign_detection
+- yolo_node
+- rosbag2
+- resource_monitor

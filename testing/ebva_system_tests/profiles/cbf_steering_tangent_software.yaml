@@ -1,0 +1,32 @@
+version: 1
+name: cbf_steering_tangent_software
+namespace: /cbf_steering_tangent_software
+nodes:
+- id: command_authority
+  package: ebva_vehicle_control
+  executable: command_authority
+  name: command_authority
+  parameters:
+  - package: ebva_vehicle_control
+    file: config/testing/cbf_steering_tangent_software/command_authority.yaml
+- id: vesc_backend
+  package: ebva_vehicle_control
+  executable: vesc_backend
+  name: vesc_backend
+  parameters:
+  - package: ebva_vehicle_control
+    file: config/testing/cbf_steering_tangent_software/vesc_backend.yaml
+- id: cbf_steering_tangent
+  package: ebva_cbf_control
+  executable: steering_tangent_stamped
+  name: cbf_steering_tangent
+  parameters:
+  - package: ebva_cbf_control
+    file: config/testing/cbf_steering_tangent_software/cbf_steering_tangent.yaml
+- id: cbf_steering_tangent_adapter
+  package: ebva_vehicle_control
+  executable: cbf_steering_tangent_adapter
+  name: cbf_steering_tangent_adapter
+  parameters:
+  - package: ebva_vehicle_control
+    file: config/testing/cbf_steering_tangent_software/cbf_steering_tangent_adapter.yaml

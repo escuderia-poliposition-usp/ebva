@@ -1,0 +1,10 @@
+/ftg_pd_software/command_authority:
+  ros__parameters:
+    rc_timeout_s: 0.2
+    autonomy_timeout_s: 0.2
+    rc_center_us: 1500.0
+    override_enter_us: 100.0
+    override_release_us: 80.0
+    enforce_graph: true
+    rc_publisher_name: rosbag2_player
+    use_sim_time: true

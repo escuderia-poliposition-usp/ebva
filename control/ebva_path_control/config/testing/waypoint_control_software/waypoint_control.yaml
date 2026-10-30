@@ -1,0 +1,16 @@
+/waypoint_control_software/waypoint_control:
+  ros__parameters:
+    observation_timeout: 0.2
+    future_slack: 0.02
+    control_mode: carrot
+    reference_frame_id: fixture_map
+    body_frame_id: fixture_rear_axle_flu
+    model_point: software_fixture_rear_axle
+    reference_contract: ordered_xy_si_v1
+    reference_origin: shared_reference_frame
+    reference_direction: csv_order
+    pose_contract: cartesian_body_pose_si_v1
+    use_sim_time: true
+    csv_path: package://ebva_path_control/data/testing/waypoint_control_reference.csv
+    command_topic: control/autonomy/effort_steering
+    odometry_topic: state/odometry

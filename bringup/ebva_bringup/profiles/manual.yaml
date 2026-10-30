@@ -1,0 +1,7 @@
+version: 1
+name: manual
+namespace: /ebva
+launches:
+- id: vehicle
+  package: ebva_vehicle_control
+  file: launch/manual.launch.py

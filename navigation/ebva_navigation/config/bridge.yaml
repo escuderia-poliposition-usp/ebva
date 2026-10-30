@@ -1,0 +1,8 @@
+cmd_vel_to_ackermann_node:
+  ros__parameters:
+    wheelbase: 0.26
+    max_steering_angle: 0.4
+    frame_id: zed_camera_link
+    cmd_vel_topic: /cmd_vel
+    ackermann_cmd_topic: control/autonomy/ackermann
+    use_sim_time: false

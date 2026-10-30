@@ -1,0 +1,32 @@
+version: 1
+name: frm_control_software
+namespace: /frm_control_software
+nodes:
+- id: frm_point_sample
+  package: ebva_frm_control
+  executable: point_sample
+  name: frm_point_sample
+  parameters:
+  - package: ebva_frm_control
+    file: config/testing/frm_control_software/frm_point_sample.yaml
+- id: frm_effort_adapter
+  package: ebva_vehicle_control
+  executable: frm_effort_adapter
+  name: frm_effort_adapter
+  parameters:
+  - package: ebva_vehicle_control
+    file: config/testing/frm_control_software/frm_effort_adapter.yaml
+- id: command_authority
+  package: ebva_vehicle_control
+  executable: command_authority
+  name: command_authority
+  parameters:
+  - package: ebva_vehicle_control
+    file: config/testing/frm_control_software/command_authority.yaml
+- id: vesc_backend
+  package: ebva_vehicle_control
+  executable: vesc_backend
+  name: vesc_backend
+  parameters:
+  - package: ebva_vehicle_control
+    file: config/testing/frm_control_software/vesc_backend.yaml

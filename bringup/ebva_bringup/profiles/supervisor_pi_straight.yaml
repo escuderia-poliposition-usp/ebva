@@ -1,0 +1,11 @@
+version: 1
+name: supervisor_pi_straight
+namespace: /ebva
+launches:
+- id: controller
+  package: ebva_supervisor
+  file: launch/controller.launch.py
+  arguments:
+    params_file:
+      package: ebva_supervisor
+      file: config/pi_straight.yaml

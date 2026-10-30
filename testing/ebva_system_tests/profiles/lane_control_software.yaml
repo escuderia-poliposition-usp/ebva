@@ -1,0 +1,32 @@
+version: 1
+name: lane_control_software
+namespace: /lane_control_software
+nodes:
+- id: lane_keeping_node
+  package: ebva_lane_keeping
+  executable: lane_keeping
+  name: lane_keeping_node
+  parameters:
+  - package: ebva_lane_keeping
+    file: config/testing/lane_control_software/lane_keeping_node.yaml
+- id: ackermann_adapter
+  package: ebva_vehicle_control
+  executable: ackermann_adapter
+  name: ackermann_adapter
+  parameters:
+  - package: ebva_vehicle_control
+    file: config/testing/lane_control_software/ackermann_adapter.yaml
+- id: command_authority
+  package: ebva_vehicle_control
+  executable: command_authority
+  name: command_authority
+  parameters:
+  - package: ebva_vehicle_control
+    file: config/testing/lane_control_software/command_authority.yaml
+- id: vesc_backend
+  package: ebva_vehicle_control
+  executable: vesc_backend
+  name: vesc_backend
+  parameters:
+  - package: ebva_vehicle_control
+    file: config/testing/lane_control_software/vesc_backend.yaml

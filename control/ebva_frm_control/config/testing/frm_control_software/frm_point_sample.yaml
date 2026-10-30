@@ -1,0 +1,5 @@
+/frm_control_software/frm_point_sample:
+  ros__parameters:
+    expected_scan_frame: fixture_lidar_flu
+    source_timeout_s: 0.2
+    use_sim_time: true

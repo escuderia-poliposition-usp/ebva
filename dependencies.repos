@@ -1,0 +1,18 @@
+# Import only into a new workspace. Existing external checkouts are not replaced.
+repositories:
+  external/teleop_tools:
+    type: git
+    url: https://github.com/f1tenth/teleop_tools.git
+    version: 163827aa96039a70f5fe7f2bb59c332417b64eee
+  external/vesc:
+    type: git
+    url: https://github.com/f1tenth/vesc.git
+    version: 153998df8545fe1781b975df88e411b4e71d4bfe
+  external/urg_node2:
+    type: git
+    url: https://github.com/Hokuyo-aut/urg_node2.git
+    version: f02d8af22db2a4322217f4c5803494f4ca2903ff
+  external/zed-ros2-wrapper:
+    type: git
+    url: https://github.com/stereolabs/zed-ros2-wrapper.git
+    version: 458c72514c08856b2e911c011283eda2dae3b915

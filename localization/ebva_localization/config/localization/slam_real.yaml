@@ -1,0 +1,60 @@
+slam_toolbox:
+  ros__parameters:
+    solver_plugin: solver_plugins::CeresSolver
+
+    odom_frame: odom
+    map_frame: map
+    base_frame: base_link
+    scan_topic: /escuderia/scan
+
+    mode: localization #mapping 
+
+    serialized_map_path: ''  # Selecione explicitamente um mapa local.
+
+    map_start_at_dock: true
+    debug_logging: false
+
+    # --- Core timing and resolution ---
+    transform_publish_period: 0.025        # 50 Hz TF updates
+    map_update_interval: 5.0
+    resolution: 0.05
+    max_laser_range: 10.0
+    minimum_time_interval: 0.05
+    transform_timeout: 1.0
+    tf_buffer_duration: 30.0
+
+    # --- Motion and scan match settings ---
+    use_scan_matching: true
+    use_scan_barycenter: true
+    minimum_travel_distance: 0.15         # reduced for tighter curves
+    minimum_travel_heading: 0.10
+    use_pose_extrapolation: false
+    throttle_scans: 1
+
+    # --- Loop closure section ---
+    loop_closure: true
+    loop_search_max_distance: 10.0         # how far to look for loop candidates
+    loop_search_num_submaps: 10           # number of nearby submaps to test
+    loop_match_minimum_score: 0.4        # minimum ICP score to accept a loop
+    do_loop_closing: true                 # actually apply the loop constraint
+    do_pose_graph_smoothing: true         # optimize the global graph
+    max_laser_range_to_use: 10.0           # ignore noisy far readings
+    use_response_expansion: false         # disable to speed up scan matching
+
+    # --- Optimization & performance ---
+    ceres_linear_solver: SPARSE_NORMAL_CHOLESKY
+    ceres_trust_strategy: LEVENBERG_MARQUARDT
+    ceres_loss_function: HUBER
+    ceres_huber_scale: 1.0
+
+    # --- Output ---
+    publish_period: 0.5
+    publish_map: true
+
+    #outros parametreros
+    use_imu: false
+
+    #transfrom_tolerance: 
+
+
+

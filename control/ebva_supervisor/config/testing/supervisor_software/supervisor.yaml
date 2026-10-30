@@ -1,0 +1,14 @@
+/supervisor_software/supervisor:
+  ros__parameters:
+    method: supervised
+    expected_frame: supervisor_fixture_model
+    source_timeout_s: 0.2
+    control_rate_hz: 20.0
+    kp_reta: 1.0
+    ki_reta: 0.1
+    kp_curva: 1.5
+    curvature_gain: 0.3
+    kp_intersecao: 0.8
+    input_topic: classification/input
+    output_topic: control/autonomy/effort
+    use_sim_time: false

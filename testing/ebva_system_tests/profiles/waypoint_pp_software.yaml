@@ -1,0 +1,39 @@
+version: 1
+name: waypoint_pp_software
+namespace: /waypoint_pp_software
+nodes:
+- id: command_authority
+  package: ebva_vehicle_control
+  executable: command_authority
+  name: command_authority
+  parameters:
+  - package: ebva_vehicle_control
+    file: config/testing/waypoint_pp_software/command_authority.yaml
+- id: vesc_backend
+  package: ebva_vehicle_control
+  executable: vesc_backend
+  name: vesc_backend
+  parameters:
+  - package: ebva_vehicle_control
+    file: config/testing/waypoint_pp_software/vesc_backend.yaml
+- id: odometry_pose
+  package: ebva_localization
+  executable: odometry_pose
+  name: odometry_pose
+  parameters:
+  - package: ebva_localization
+    file: config/testing/waypoint_pp_software/odometry_pose.yaml
+- id: waypoint_pp
+  package: ebva_path_control
+  executable: waypoint_pp
+  name: waypoint_pp
+  parameters:
+  - package: ebva_path_control
+    file: config/testing/waypoint_pp_software/waypoint_pp.yaml
+- id: ackermann_adapter
+  package: ebva_vehicle_control
+  executable: ackermann_adapter
+  name: ackermann_adapter
+  parameters:
+  - package: ebva_vehicle_control
+    file: config/testing/waypoint_pp_software/ackermann_adapter.yaml

@@ -1,0 +1,57 @@
+rc_acquisition:
+  ros__parameters:
+    serial_port: /dev/arduino_rc
+    baud_rate: 115200
+    rc_timeout_s: 0.2
+    use_sim_time: false
+
+command_authority:
+  ros__parameters:
+    rc_timeout_s: 0.2
+    autonomy_timeout_s: 0.2
+    rc_center_us: 1500.0
+    override_enter_us: 100.0
+    override_release_us: 80.0
+    enforce_graph: true
+    rc_publisher_name: rc_acquisition
+    use_sim_time: false
+
+vesc_backend:
+  ros__parameters:
+    auto_enable_on_startup: true
+    rc_timeout_s: 0.2
+    autonomy_timeout_s: 0.2
+    backend_timeout_s: 0.2
+    rc_center_us: 1500.0
+    override_enter_us: 100.0
+    override_release_us: 80.0
+    enforce_graph: true
+    erpm_per_us: -8.0
+    throttle_center: 1500.0
+    throttle_deadband: 100.0
+    steering_min_us: 900.0
+    steering_max_us: 2100.0
+    steering_min_servo: 0.15
+    steering_max_servo: 0.85
+    servo_center: 0.5
+    erpm_limit: 8000.0
+    servo_min: 0.0
+    servo_max: 1.0
+    use_sim_time: false
+
+vesc_driver_node:
+  ros__parameters:
+    port: /dev/sensors/vesc
+    speed_min: -8000.0
+    speed_max: 8000.0
+    servo_min: 0.0
+    servo_max: 1.0
+    duty_cycle_min: 0.0
+    duty_cycle_max: 0.0
+    current_min: 0.0
+    current_max: 0.0
+    brake_min: 0.0
+    brake_max: 0.0
+    position_min: 0.0
+    position_max: 0.0
+    use_sim_time: false

@@ -1,0 +1,10 @@
+launch_arguments:
+  camera_model: zedm
+  camera_name: zed
+  node_name: zed_node
+  publish_tf: false
+  publish_map_tf: false
+  publish_imu_tf: false
+ros_parameters_file:
+  package: ebva_sensors
+  file: config/zed_tracking.yaml

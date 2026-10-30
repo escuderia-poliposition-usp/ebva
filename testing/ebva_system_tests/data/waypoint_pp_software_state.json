@@ -1,0 +1,72 @@
+{
+  "profile_id": "waypoint_pp_software",
+  "local_frame": "fixture_map",
+  "global_frame": null,
+  "body_frame": "fixture_rear_axle_flu",
+  "require_tf": false,
+  "static_lifetime": "publisher_present",
+  "future_tolerance_sec": 0.02,
+  "edges": [],
+  "state_ports": [
+    {
+      "name": "source",
+      "type": "nav_msgs/Odometry",
+      "role": "local",
+      "frame": "fixture_map",
+      "body": "fixture_rear_axle_flu",
+      "model_point": "software_fixture_rear_axle",
+      "stamp": "measurement",
+      "provides": [
+        "pose",
+        "pose_covariance"
+      ],
+      "topic": "/waypoint_pp_software/state/odometry",
+      "publisher": "/rosbag2_player",
+      "max_age_sec": 0.2,
+      "twist_frame": "fixture_rear_axle_flu"
+    },
+    {
+      "name": "pose",
+      "type": "geometry_msgs/PoseWithCovarianceStamped",
+      "role": "local",
+      "frame": "fixture_map",
+      "body": "fixture_rear_axle_flu",
+      "model_point": "software_fixture_rear_axle",
+      "stamp": "measurement",
+      "provides": [
+        "pose",
+        "pose_covariance"
+      ],
+      "topic": "/waypoint_pp_software/state/pose",
+      "publisher": "/waypoint_pp_software/odometry_pose",
+      "max_age_sec": 0.2
+    }
+  ],
+  "consumers": [
+    {
+      "name": "odometry_pose",
+      "port": "source",
+      "type": "nav_msgs/Odometry",
+      "frame": "fixture_map",
+      "body": "fixture_rear_axle_flu",
+      "model_point": "software_fixture_rear_axle",
+      "needs": [
+        "pose",
+        "pose_covariance"
+      ],
+      "max_age_sec": 0.2
+    },
+    {
+      "name": "waypoint_pp",
+      "port": "pose",
+      "type": "geometry_msgs/PoseWithCovarianceStamped",
+      "frame": "fixture_map",
+      "body": "fixture_rear_axle_flu",
+      "model_point": "software_fixture_rear_axle",
+      "needs": [
+        "pose"
+      ],
+      "max_age_sec": 0.2
+    }
+  ]
+}

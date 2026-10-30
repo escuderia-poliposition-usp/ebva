@@ -1,0 +1,13 @@
+/frm_control_software/frm_effort_adapter:
+  ros__parameters:
+    mapping_purpose: software_fixture
+    calibration_id: synthetic-frm-point-v1
+    expected_frame: fixture_lidar_flu
+    source_timeout_s: 0.2
+    longitudinal_gain_erpm_per_effort: 100.0
+    steering_gain_servo_per_effort: -0.1
+    servo_center: 0.5
+    erpm_limit: 600.0
+    servo_min: 0.4
+    servo_max: 0.6
+    use_sim_time: true

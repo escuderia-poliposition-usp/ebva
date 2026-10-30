@@ -1,0 +1,8 @@
+/ftg_pd_software/ftg_pd:
+  ros__parameters:
+    expected_frame: fixture_control_flu
+    feedback_purpose: software_fixture_angle_rad
+    feedback_joint: virtual_steering
+    source_timeout_s: 0.2
+    max_input_skew_s: 0.08
+    use_sim_time: true

@@ -1,0 +1,32 @@
+version: 1
+name: waypoint_control_software
+namespace: /waypoint_control_software
+nodes:
+- id: command_authority
+  package: ebva_vehicle_control
+  executable: command_authority
+  name: command_authority
+  parameters:
+  - package: ebva_vehicle_control
+    file: config/testing/waypoint_control_software/command_authority.yaml
+- id: vesc_backend
+  package: ebva_vehicle_control
+  executable: vesc_backend
+  name: vesc_backend
+  parameters:
+  - package: ebva_vehicle_control
+    file: config/testing/waypoint_control_software/vesc_backend.yaml
+- id: effort_steering_adapter
+  package: ebva_vehicle_control
+  executable: effort_steering_adapter
+  name: effort_steering_adapter
+  parameters:
+  - package: ebva_vehicle_control
+    file: config/testing/waypoint_control_software/effort_steering_adapter.yaml
+- id: waypoint_control
+  package: ebva_path_control
+  executable: waypoint_control
+  name: waypoint_control
+  parameters:
+  - package: ebva_path_control
+    file: config/testing/waypoint_control_software/waypoint_control.yaml

@@ -1,0 +1,25 @@
+version: 1
+name: navigation_slam
+namespace: /
+launches:
+- id: vehicle
+  package: ebva_vehicle_control
+  file: launch/manual.launch.py
+- id: lidar
+  package: ebva_sensors
+  file: launch/lidar_mapping_zed.launch.py
+- id: zed
+  package: ebva_sensors
+  file: launch/zed_odometry.launch.py
+- id: localization
+  package: ebva_localization
+  file: launch/slam_localization.launch.py
+- id: navigation
+  package: ebva_navigation
+  file: launch/navigation.launch.py
+- id: bridge
+  package: ebva_navigation
+  file: launch/bridge.launch.py
+- id: autonomy_adapter
+  package: ebva_vehicle_control
+  file: launch/navigation_adapter.launch.py

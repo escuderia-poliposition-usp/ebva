@@ -1,0 +1,14 @@
+/csv_frenet_software/csv_frenet_pp:
+  ros__parameters:
+    reference_frame_id: fixture_map
+    body_frame_id: fixture_rear_axle_flu
+    model_point: software_fixture_rear_axle
+    reference_contract: closed_progress_si_v1
+    progress_origin: first_accepted_odometry_s0
+    progress_direction: path_order
+    observation_timeout: 0.2
+    future_slack: 0.02
+    use_sim_time: true
+    csv_path: package://ebva_path_control/data/testing/csv_frenet_reference.csv
+    command_topic: control/autonomy/ackermann
+    odometry_topic: state/odometry

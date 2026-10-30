@@ -1,0 +1,140 @@
+{
+  "original_sha256": "0288b4ddadc27412f5a8d676835b05401318031993f7f9dbeee378f80a6ebf0e",
+  "cases": [
+    {
+      "goal_degrees": 0,
+      "distance": 3,
+      "feedback": 0,
+      "steering": 9.325873406851315e-14,
+      "throttle": 0.02,
+      "limited_reference": 9.325873406851315e-14,
+      "unsaturated_speed_state": 0.02
+    },
+    {
+      "goal_degrees": 0,
+      "distance": 3,
+      "feedback": 0,
+      "steering": 9.325873406851315e-14,
+      "throttle": 0.04,
+      "limited_reference": 9.325873406851315e-14,
+      "unsaturated_speed_state": 0.04
+    },
+    {
+      "goal_degrees": 0,
+      "distance": 3,
+      "feedback": 0,
+      "steering": 9.325873406851315e-14,
+      "throttle": 0.06,
+      "limited_reference": 9.325873406851315e-14,
+      "unsaturated_speed_state": 0.06
+    },
+    {
+      "goal_degrees": 0,
+      "distance": 3,
+      "feedback": 0,
+      "steering": 9.325873406851315e-14,
+      "throttle": 0.08,
+      "limited_reference": 9.325873406851315e-14,
+      "unsaturated_speed_state": 0.08
+    },
+    {
+      "goal_degrees": 0,
+      "distance": 3,
+      "feedback": 0,
+      "steering": 9.325873406851315e-14,
+      "throttle": 0.09999999999999644,
+      "limited_reference": 9.325873406851315e-14,
+      "unsaturated_speed_state": 0.09999999999999644
+    },
+    {
+      "goal_degrees": 0,
+      "distance": 3,
+      "feedback": 0,
+      "steering": 9.325873406851315e-14,
+      "throttle": 0.09999999999999644,
+      "limited_reference": 9.325873406851315e-14,
+      "unsaturated_speed_state": 0.09999999999999644
+    },
+    {
+      "goal_degrees": 0,
+      "distance": 3,
+      "feedback": 0,
+      "steering": 9.325873406851315e-14,
+      "throttle": 0.09999999999999644,
+      "limited_reference": 9.325873406851315e-14,
+      "unsaturated_speed_state": 0.09999999999999644
+    },
+    {
+      "goal_degrees": 20,
+      "distance": 3,
+      "feedback": 0,
+      "steering": 0.34906585039895915,
+      "throttle": 0.08666666666666258,
+      "limited_reference": 0.34906585039895915,
+      "unsaturated_speed_state": 0.08666666666666258
+    },
+    {
+      "goal_degrees": 20,
+      "distance": 3,
+      "feedback": 0.1,
+      "steering": 0.20462140595452852,
+      "throttle": 0.08666666666666258,
+      "limited_reference": 0.349065850398973,
+      "unsaturated_speed_state": 0.08666666666666258
+    },
+    {
+      "goal_degrees": 20,
+      "distance": 3,
+      "feedback": 0.1,
+      "steering": 0.22931276397921987,
+      "throttle": 0.08666666666666258,
+      "limited_reference": 0.349065850398973,
+      "unsaturated_speed_state": 0.08666666666666258
+    },
+    {
+      "goal_degrees": -20,
+      "distance": 3,
+      "feedback": 0,
+      "steering": 0.03566529492466127,
+      "throttle": 0.08666666666666971,
+      "limited_reference": 1.0708101072509635e-13,
+      "unsaturated_speed_state": 0.08666666666666971
+    },
+    {
+      "goal_degrees": -20,
+      "distance": 3,
+      "feedback": -0.1,
+      "steering": -0.1887701637656236,
+      "throttle": 0.08666666666666971,
+      "limited_reference": -0.3490658503987588,
+      "unsaturated_speed_state": 0.08666666666666971
+    },
+    {
+      "goal_degrees": -20,
+      "distance": 3,
+      "feedback": -0.1,
+      "steering": -0.22226776745072635,
+      "throttle": 0.08666666666666971,
+      "limited_reference": -0.34906585039878646,
+      "unsaturated_speed_state": 0.08666666666666971
+    },
+    {
+      "goal_degrees": 0,
+      "distance": 2.2,
+      "feedback": 0,
+      "steering": -0.032534185356338306,
+      "throttle": 0.07333333333333072,
+      "limited_reference": 7.943645741192995e-14,
+      "unsaturated_speed_state": 0.07333333333333072
+    },
+    {
+      "goal_degrees": 0,
+      "distance": 3,
+      "feedback": 0,
+      "steering": -0.014459637936092406,
+      "throttle": 0.09333333333333073,
+      "limited_reference": 9.325873406851315e-14,
+      "unsaturated_speed_state": 0.09333333333333073
+    }
+  ]
+}

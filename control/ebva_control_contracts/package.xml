@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<package format="3"><name>ebva_control_contracts</name><version>0.1.0</version>
+<description>Pure temporal validity contracts for EBVA control.</description>
+<maintainer email="ebva.usp@gmail.com">Poliposition</maintainer><license>MIT</license>
+<buildtool_depend>ament_python</buildtool_depend><test_depend>python3-pytest</test_depend>
+<export><build_type>ament_python</build_type></export></package>

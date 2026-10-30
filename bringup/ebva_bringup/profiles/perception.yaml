@@ -1,0 +1,14 @@
+version: 1
+name: perception
+namespace: /
+launches:
+- id: zed
+  package: ebva_sensors
+  file: launch/zed.launch.py
+- id: lanes
+  package: ebva_lane_detection
+  file: launch/lane_detection.launch.py
+- id: signs
+  package: ebva_sign_detection
+  file: launch/detector.launch.py
+

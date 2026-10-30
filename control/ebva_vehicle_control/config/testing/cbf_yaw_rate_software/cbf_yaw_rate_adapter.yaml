@@ -1,0 +1,21 @@
+/cbf_yaw_rate_software/cbf_yaw_rate_adapter:
+  ros__parameters:
+    mapping_purpose: software_fixture
+    calibration_id: synthetic-cbf-yaw-rate-v1
+    expected_frame: fixture_rear_axle_flu
+    velocity_parent_frame: fixture_odom
+    source_timeout_s: 0.2
+    max_input_skew_s: 0.08
+    acceleration_gain_erpm_per_mps2: 100.0
+    steering_gain_servo_per_rad: -0.2
+    model_wheelbase_m: 0.33
+    speed_floor_mps: 0.1
+    positive_acceleration_cap_mps2: 0.24
+    max_acceleration_mps2: 3.0
+    max_yaw_rate_rps: 0.16666666666666666
+    max_steering_rad: 0.5235987755982988
+    servo_center: 0.5
+    erpm_limit: 600.0
+    servo_min: 0.4
+    servo_max: 0.6
+    use_sim_time: true

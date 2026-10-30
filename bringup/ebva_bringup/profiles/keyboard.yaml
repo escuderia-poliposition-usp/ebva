@@ -1,0 +1,17 @@
+version: 1
+name: keyboard
+namespace: /ebva
+launches:
+- id: keyboard_vehicle
+  package: ebva_vehicle_control
+  file: launch/keyboard.launch.py
+  arguments:
+    params_file:
+      package: ebva_vehicle_control
+      file: config/keyboard_adapter.yaml
+    vehicle_params_file:
+      package: ebva_vehicle_control
+      file: config/vehicle/manual_core.yaml
+    key_params_file:
+      package: ebva_vehicle_control
+      file: config/key_teleop.yaml

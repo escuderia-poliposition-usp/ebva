@@ -1,0 +1,12 @@
+version: 2
+output_root: ~/rosbags
+session_prefix: reference
+duration_s: 60.0
+discovery_timeout_s: 5.0
+min_free_mib: 2048
+max_bag_size: 1073741824
+max_cache_size: 104857600
+interval_s: 1.0
+topics:
+  - /escuderia/scan
+  - /odometry/filtered

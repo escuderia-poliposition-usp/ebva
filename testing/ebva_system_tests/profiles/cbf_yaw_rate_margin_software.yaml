@@ -1,0 +1,32 @@
+version: 1
+name: cbf_yaw_rate_margin_software
+namespace: /cbf_yaw_rate_margin_software
+nodes:
+- id: command_authority
+  package: ebva_vehicle_control
+  executable: command_authority
+  name: command_authority
+  parameters:
+  - package: ebva_vehicle_control
+    file: config/testing/cbf_yaw_rate_margin_software/command_authority.yaml
+- id: vesc_backend
+  package: ebva_vehicle_control
+  executable: vesc_backend
+  name: vesc_backend
+  parameters:
+  - package: ebva_vehicle_control
+    file: config/testing/cbf_yaw_rate_margin_software/vesc_backend.yaml
+- id: cbf_yaw_rate_margin
+  package: ebva_cbf_control
+  executable: yaw_rate_margin_stamped
+  name: cbf_yaw_rate_margin
+  parameters:
+  - package: ebva_cbf_control
+    file: config/testing/cbf_yaw_rate_margin_software/cbf_yaw_rate_margin.yaml
+- id: cbf_yaw_rate_margin_adapter
+  package: ebva_vehicle_control
+  executable: cbf_yaw_rate_margin_adapter
+  name: cbf_yaw_rate_margin_adapter
+  parameters:
+  - package: ebva_vehicle_control
+    file: config/testing/cbf_yaw_rate_margin_software/cbf_yaw_rate_margin_adapter.yaml

@@ -1,0 +1,20 @@
+# Imagens para faixas; sem odometria/TF ZED concorrendo com EKF/SLAM.
+/**:
+  ros__parameters:
+    general:
+      grab_resolution: HD1080
+      grab_frame_rate: 30
+      pub_resolution: CUSTOM
+      pub_downscale_factor: 2.0
+      pub_frame_rate: 15.0
+    depth:
+      depth_mode: NONE
+      depth_stabilization: 0
+    pos_tracking:
+      pos_tracking_enabled: false
+    mapping:
+      mapping_enabled: false
+    object_detection:
+      od_enabled: false
+    body_tracking:
+      bt_enabled: false

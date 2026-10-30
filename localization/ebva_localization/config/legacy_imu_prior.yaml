@@ -1,0 +1,14 @@
+imu_odometry:
+  ros__parameters:
+    imu_topic: /sensors/imu/raw
+    odom_topic: /odom
+    odom_frame: odom
+    base_frame: base_link
+    publish_tf: true
+    accel_to_ms2: 9.806
+    calib_samples: 200
+    zupt_enable: true
+    zupt_accel_thresh: 0.2
+    zupt_gyro_thresh: 0.05
+    max_speed: 4.0
+    use_sim_time: false

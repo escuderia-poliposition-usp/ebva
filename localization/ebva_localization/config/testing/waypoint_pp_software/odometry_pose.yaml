@@ -1,0 +1,9 @@
+/waypoint_pp_software/odometry_pose:
+  ros__parameters:
+    input_topic: state/odometry
+    output_topic: state/pose
+    parent_frame: fixture_map
+    child_frame: fixture_rear_axle_flu
+    max_age_sec: 0.2
+    future_tolerance_sec: 0.02
+    use_sim_time: true

@@ -1,0 +1,32 @@
+version: 1
+name: ftg_pd_software
+namespace: /ftg_pd_software
+nodes:
+- id: ftg_pd
+  package: ebva_mapless_control
+  executable: ftg_pd
+  name: ftg_pd
+  parameters:
+  - package: ebva_mapless_control
+    file: config/testing/ftg_pd_software/ftg_pd.yaml
+- id: ftg_pd_adapter
+  package: ebva_vehicle_control
+  executable: ftg_pd_adapter
+  name: ftg_pd_adapter
+  parameters:
+  - package: ebva_vehicle_control
+    file: config/testing/ftg_pd_software/ftg_pd_adapter.yaml
+- id: command_authority
+  package: ebva_vehicle_control
+  executable: command_authority
+  name: command_authority
+  parameters:
+  - package: ebva_vehicle_control
+    file: config/testing/ftg_pd_software/command_authority.yaml
+- id: vesc_backend
+  package: ebva_vehicle_control
+  executable: vesc_backend
+  name: vesc_backend
+  parameters:
+  - package: ebva_vehicle_control
+    file: config/testing/ftg_pd_software/vesc_backend.yaml

@@ -1,0 +1,15 @@
+lane_detection_node:
+  ros__parameters:
+    image_topic: /zed/zed_node/rgb/color/rect/image
+    camera_frame_id: camera_link
+    publish_debug_image: true
+    real_lane_width_m: 3.6
+    real_forward_span_m: 18.0
+    camera_to_roi_bottom_m: 1.2
+    src_top_y_frac: 0.62
+    src_bottom_y_frac: 0.97
+    src_top_left_x_frac: 0.44
+    src_top_right_x_frac: 0.56
+    src_bottom_left_x_frac: 0.06
+    src_bottom_right_x_frac: 0.94
+    use_sim_time: false

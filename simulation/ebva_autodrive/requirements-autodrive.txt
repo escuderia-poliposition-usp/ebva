@@ -1,0 +1,4 @@
+# Backend Socket.IO v2 do AutoDRIVE. ROS/numpy/Pillow vêm do ambiente ROS.
+python-socketio>=4.6,<5
+gevent>=22.10,<25
+gevent-websocket==0.10.1

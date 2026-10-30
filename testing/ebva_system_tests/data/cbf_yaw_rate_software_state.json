@@ -1,0 +1,42 @@
+{
+  "profile_id": "cbf_yaw_rate_software",
+  "local_frame": "fixture_odom",
+  "global_frame": null,
+  "body_frame": "fixture_rear_axle_flu",
+  "require_tf": false,
+  "static_lifetime": "publisher_present",
+  "future_tolerance_sec": 0.02,
+  "edges": [],
+  "state_ports": [
+    {
+      "name": "velocity",
+      "type": "nav_msgs/Odometry",
+      "role": "local",
+      "frame": "fixture_odom",
+      "body": "fixture_rear_axle_flu",
+      "model_point": "rear_axle_center",
+      "stamp": "measurement",
+      "provides": [
+        "longitudinal_velocity"
+      ],
+      "twist_frame": "fixture_rear_axle_flu",
+      "topic": "/cbf_yaw_rate_software/state/odometry",
+      "publisher": "/rosbag2_player",
+      "max_age_sec": 0.2
+    }
+  ],
+  "consumers": [
+    {
+      "name": "cbf_yaw_rate",
+      "port": "velocity",
+      "type": "nav_msgs/Odometry",
+      "frame": "fixture_odom",
+      "body": "fixture_rear_axle_flu",
+      "model_point": "rear_axle_center",
+      "needs": [
+        "longitudinal_velocity"
+      ],
+      "max_age_sec": 0.2
+    }
+  ]
+}

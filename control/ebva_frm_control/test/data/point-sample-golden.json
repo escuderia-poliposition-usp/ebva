@@ -1,0 +1,245 @@
+{
+  "source_sha256": "4b77384915e17eb6ebe601f89f6bf6268df0cfa03042786a8739a7806e4a1c00",
+  "cases": [
+    {
+      "points_front_left90_right90_left45_right45": [
+        5,
+        1,
+        1,
+        1,
+        1
+      ],
+      "output_order": [
+        "steering",
+        "longitudinal"
+      ],
+      "steering": 0.0,
+      "longitudinal": 0.2
+    },
+    {
+      "points_front_left90_right90_left45_right45": [
+        5,
+        1,
+        1,
+        1,
+        1
+      ],
+      "output_order": [
+        "steering",
+        "longitudinal"
+      ],
+      "steering": 0.0,
+      "longitudinal": 0.15
+    },
+    {
+      "points_front_left90_right90_left45_right45": [
+        10,
+        1,
+        1,
+        1,
+        1
+      ],
+      "output_order": [
+        "steering",
+        "longitudinal"
+      ],
+      "steering": 0.0,
+      "longitudinal": 0.35
+    },
+    {
+      "points_front_left90_right90_left45_right45": [
+        0,
+        1,
+        1,
+        1,
+        1
+      ],
+      "output_order": [
+        "steering",
+        "longitudinal"
+      ],
+      "steering": 0.0,
+      "longitudinal": -0.1
+    },
+    {
+      "points_front_left90_right90_left45_right45": [
+        0,
+        1,
+        1,
+        1,
+        1
+      ],
+      "output_order": [
+        "steering",
+        "longitudinal"
+      ],
+      "steering": 0.0,
+      "longitudinal": 0.0
+    },
+    {
+      "points_front_left90_right90_left45_right45": [
+        2,
+        1.01,
+        1,
+        1,
+        1
+      ],
+      "output_order": [
+        "steering",
+        "longitudinal"
+      ],
+      "steering": 0.04600000000000004,
+      "longitudinal": 0.08
+    },
+    {
+      "points_front_left90_right90_left45_right45": [
+        2,
+        1.01,
+        1,
+        1,
+        1
+      ],
+      "output_order": [
+        "steering",
+        "longitudinal"
+      ],
+      "steering": 0.006000000000000005,
+      "longitudinal": 0.06
+    },
+    {
+      "points_front_left90_right90_left45_right45": [
+        2,
+        1,
+        1.01,
+        1,
+        1
+      ],
+      "output_order": [
+        "steering",
+        "longitudinal"
+      ],
+      "steering": -0.08600000000000008,
+      "longitudinal": 0.06
+    },
+    {
+      "points_front_left90_right90_left45_right45": [
+        2,
+        1,
+        1.01,
+        1,
+        1
+      ],
+      "output_order": [
+        "steering",
+        "longitudinal"
+      ],
+      "steering": -0.006000000000000005,
+      "longitudinal": 0.06
+    },
+    {
+      "points_front_left90_right90_left45_right45": [
+        2,
+        1,
+        1,
+        1.01,
+        1
+      ],
+      "output_order": [
+        "steering",
+        "longitudinal"
+      ],
+      "steering": 0.04320000000000004,
+      "longitudinal": 0.06
+    },
+    {
+      "points_front_left90_right90_left45_right45": [
+        2,
+        1,
+        1,
+        1,
+        1.01
+      ],
+      "output_order": [
+        "steering",
+        "longitudinal"
+      ],
+      "steering": -0.006200000000000006,
+      "longitudinal": 0.06
+    },
+    {
+      "points_front_left90_right90_left45_right45": [
+        2,
+        20,
+        1,
+        20,
+        1
+      ],
+      "output_order": [
+        "steering",
+        "longitudinal"
+      ],
+      "steering": 1.0,
+      "longitudinal": 0.06
+    },
+    {
+      "points_front_left90_right90_left45_right45": [
+        2,
+        1,
+        20,
+        1,
+        20
+      ],
+      "output_order": [
+        "steering",
+        "longitudinal"
+      ],
+      "steering": -1.0,
+      "longitudinal": 0.06
+    },
+    {
+      "points_front_left90_right90_left45_right45": [
+        100,
+        1,
+        1,
+        1,
+        1
+      ],
+      "output_order": [
+        "steering",
+        "longitudinal"
+      ],
+      "steering": 1.0,
+      "longitudinal": 0.38
+    },
+    {
+      "points_front_left90_right90_left45_right45": [
+        0.01,
+        1,
+        1,
+        1,
+        1
+      ],
+      "output_order": [
+        "steering",
+        "longitudinal"
+      ],
+      "steering": 0.0,
+      "longitudinal": -0.09960000000000001
+    },
+    {
+      "points_front_left90_right90_left45_right45": [
+        0.01,
+        1,
+        1,
+        1,
+        1
+      ],
+      "output_order": [
+        "steering",
+        "longitudinal"
+      ],
+      "steering": 0.0,
+      "longitudinal": 0.0003
+    }
+  ]
+}

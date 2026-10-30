@@ -1,0 +1,15 @@
+# Synthetic XY fixture; does not start localization, sensors or actuators.
+waypoint_pp:
+  ros__parameters:
+    path_frame_id: fixture_odom
+    body_frame_id: fixture_rear_axle_flu
+    model_point: software_fixture_rear_axle
+    path_contract: ordered_closed_xy_si_v1
+    path_origin: shared_reference_frame
+    path_direction: csv_order
+    pose_contract: cartesian_body_pose_si_v1
+    observation_timeout: 0.2
+    future_slack: 0.02
+    pose_topic: pose
+    command_topic: ackermann_command
+# csv_path must be supplied explicitly; data/waypoint_pp_fixture/reference.csv is optional.

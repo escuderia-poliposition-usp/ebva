@@ -1,0 +1,143 @@
+{
+  "kind": "synthetic_cbf_distinct_model_three_sources_not_physical_calibration",
+  "origin_ros_s": 6000.0,
+  "duration_s": 11.0,
+  "period_s": 0.025,
+  "rc_period_s": 0.03,
+  "manual_rc_interval_s": [
+    3.6,
+    4.0
+  ],
+  "body_frame": "fixture_rear_axle_flu",
+  "velocity_parent_frame": "fixture_odom",
+  "phases": [
+    {
+      "start": 0.0,
+      "end": 1.4,
+      "mode": "valid",
+      "yaw_rate_rps": 0.0,
+      "acceleration_mps2": 0.1,
+      "steering_angle_rad": 0.0
+    },
+    {
+      "start": 1.4,
+      "end": 2.4,
+      "mode": "valid",
+      "yaw_rate_rps": 0.05,
+      "acceleration_mps2": 0.1,
+      "steering_angle_rad": 0.05
+    },
+    {
+      "start": 2.4,
+      "end": 3.4,
+      "mode": "valid",
+      "yaw_rate_rps": -0.05,
+      "acceleration_mps2": 0.1,
+      "steering_angle_rad": -0.05
+    },
+    {
+      "start": 3.4,
+      "end": 4.4,
+      "mode": "valid",
+      "yaw_rate_rps": 0.0,
+      "acceleration_mps2": 0.1,
+      "steering_angle_rad": 0.0
+    },
+    {
+      "start": 4.4,
+      "end": 5.1,
+      "mode": "scan_silence",
+      "yaw_rate_rps": 0.0,
+      "acceleration_mps2": 0.1,
+      "steering_angle_rad": 0.0
+    },
+    {
+      "start": 5.1,
+      "end": 5.6,
+      "mode": "valid",
+      "yaw_rate_rps": 0.0,
+      "acceleration_mps2": 0.8,
+      "steering_angle_rad": 0.0
+    },
+    {
+      "start": 5.6,
+      "end": 6.2,
+      "mode": "velocity_silence",
+      "yaw_rate_rps": 0.0,
+      "acceleration_mps2": 0.1,
+      "steering_angle_rad": 0.0
+    },
+    {
+      "start": 6.2,
+      "end": 6.6,
+      "mode": "valid",
+      "yaw_rate_rps": 0.0,
+      "acceleration_mps2": 0.1,
+      "steering_angle_rad": 0.0
+    },
+    {
+      "start": 6.6,
+      "end": 7.2,
+      "mode": "nominal_silence",
+      "yaw_rate_rps": 0.0,
+      "acceleration_mps2": 0.1,
+      "steering_angle_rad": 0.0
+    },
+    {
+      "start": 7.2,
+      "end": 7.6,
+      "mode": "infeasible",
+      "yaw_rate_rps": 0.05,
+      "acceleration_mps2": 0.1,
+      "steering_angle_rad": 0.05
+    },
+    {
+      "start": 7.6,
+      "end": 8.0,
+      "mode": "bad_scan",
+      "yaw_rate_rps": 0.0,
+      "acceleration_mps2": 0.1,
+      "steering_angle_rad": 0.0
+    },
+    {
+      "start": 8.0,
+      "end": 8.4,
+      "mode": "stale_velocity",
+      "yaw_rate_rps": 0.0,
+      "acceleration_mps2": 0.1,
+      "steering_angle_rad": 0.0
+    },
+    {
+      "start": 8.4,
+      "end": 8.9,
+      "mode": "valid",
+      "yaw_rate_rps": 0.0,
+      "acceleration_mps2": 0.1,
+      "steering_angle_rad": 0.0
+    },
+    {
+      "start": 8.9,
+      "end": 9.35,
+      "mode": "lateral_projection",
+      "acceleration_mps2": 0.1,
+      "yaw_rate_rps": 0.0,
+      "steering_angle_rad": 0.0
+    },
+    {
+      "start": 9.35,
+      "end": 9.8,
+      "mode": "valid",
+      "acceleration_mps2": 0.1,
+      "yaw_rate_rps": 0.0,
+      "steering_angle_rad": 0.0
+    },
+    {
+      "start": 9.8,
+      "end": 11.0,
+      "mode": "silence",
+      "yaw_rate_rps": 0.0,
+      "acceleration_mps2": 0.1,
+      "steering_angle_rad": 0.0
+    }
+  ]
+}

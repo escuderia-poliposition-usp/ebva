@@ -1,0 +1,6 @@
+sign_detection:
+  ros__parameters:
+    model_path: ''
+    input_topic: /zed/zed_node/rgb/color/rect/image
+    device: cpu
+    use_sim_time: false

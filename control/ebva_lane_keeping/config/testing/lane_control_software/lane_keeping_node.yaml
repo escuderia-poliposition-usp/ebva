@@ -1,0 +1,24 @@
+/lane_control_software/lane_keeping_node:
+  ros__parameters:
+    lane_topic: perception/lanes
+    odom_topic: none
+    command_topic: control/autonomy/ackermann
+    expected_lane_frame: fixture_ground_frd
+    command_frame: fixture_rear_axle_flu
+    watchdog_timeout: 0.15
+    vehicle_speed: 0.4
+    wheelbase: 0.3
+    max_steering: 0.25
+    k_stanley: 1.0
+    k_soft: 0.5
+    error_filter_alpha: 1.0
+    steering_rate: 10.0
+    accel_limit: 2.0
+    recovery_time: 0.15
+    degraded_after: 0.1
+    lost_after: 0.35
+    invalid_hold_time: 0.1
+    latch_lost: true
+    use_sim_time: true
+    reset_service: control/lane_reset
+    debug_topic: debug/lane

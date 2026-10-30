@@ -1,0 +1,14 @@
+/ftg_pd_software/ftg_pd_adapter:
+  ros__parameters:
+    mapping_purpose: software_fixture
+    calibration_id: synthetic-ftg-pd-v1
+    expected_frame: fixture_control_flu
+    source_timeout_s: 0.2
+    max_input_skew_s: 0.08
+    throttle_gain_erpm_per_unit: 1000.0
+    pd_gain_servo_per_unit: -0.1
+    servo_center: 0.5
+    erpm_limit: 600.0
+    servo_min: 0.4
+    servo_max: 0.6
+    use_sim_time: true

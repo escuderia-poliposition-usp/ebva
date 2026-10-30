@@ -1,0 +1,16 @@
+version: 1
+name: slam_mapping_imu
+namespace: /
+launches:
+- id: vehicle
+  package: ebva_vehicle_control
+  file: launch/manual.launch.py
+- id: lidar
+  package: ebva_sensors
+  file: launch/lidar_mapping_imu.launch.py
+- id: prior
+  package: ebva_localization
+  file: launch/imu_prior.launch.py
+- id: mapping
+  package: ebva_localization
+  file: launch/mapping_imu.launch.py

@@ -1,0 +1,9 @@
+vesc_imu_to_si:
+  ros__parameters:
+    input_topic: /sensors/imu/raw
+    output_topic: /sensors/imu/si
+    frame_id: zed_camera_link
+    accel_to_ms2: 9.806
+    angular_velocity_variance: 0.01
+    linear_acceleration_variance: 0.25
+    use_sim_time: false

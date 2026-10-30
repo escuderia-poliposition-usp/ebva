@@ -1,0 +1,9 @@
+/lidar_frenet_pp_software/lidar_frenet_pp:
+  ros__parameters:
+    observation_timeout: 0.2
+    future_slack: 0.02
+    scan_frame_id: fixture_lidar_flu
+    scan_contract: planar_body_flu_ranges_m_v1
+    use_sim_time: true
+    scan_topic: sensors/scan
+    command_topic: control/autonomy/effort_steering

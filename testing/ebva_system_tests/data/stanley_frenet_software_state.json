@@ -1,0 +1,46 @@
+{
+  "profile_id": "stanley_frenet_software",
+  "local_frame": "fixture_map",
+  "global_frame": null,
+  "body_frame": "fixture_rear_axle_flu",
+  "require_tf": false,
+  "static_lifetime": "publisher_present",
+  "future_tolerance_sec": 0.02,
+  "edges": [],
+  "state_ports": [
+    {
+      "name": "odometry",
+      "type": "nav_msgs/Odometry",
+      "role": "local",
+      "frame": "fixture_map",
+      "body": "fixture_rear_axle_flu",
+      "model_point": "software_fixture_rear_axle",
+      "stamp": "measurement",
+      "provides": [
+        "pose",
+        "longitudinal_velocity",
+        "lateral_velocity"
+      ],
+      "topic": "/stanley_frenet_software/state/odometry",
+      "publisher": "/rosbag2_player",
+      "max_age_sec": 0.2,
+      "twist_frame": "fixture_rear_axle_flu"
+    }
+  ],
+  "consumers": [
+    {
+      "name": "stanley_frenet",
+      "port": "odometry",
+      "type": "nav_msgs/Odometry",
+      "frame": "fixture_map",
+      "body": "fixture_rear_axle_flu",
+      "model_point": "software_fixture_rear_axle",
+      "needs": [
+        "pose",
+        "longitudinal_velocity",
+        "lateral_velocity"
+      ],
+      "max_age_sec": 0.2
+    }
+  ]
+}

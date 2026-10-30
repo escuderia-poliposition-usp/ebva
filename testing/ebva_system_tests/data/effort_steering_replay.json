@@ -1,0 +1,38 @@
+{
+  "kind": "synthetic_effort_geometric_angle_not_vehicle_calibration",
+  "origin_ros_s": 5000.0,
+  "duration_s": 8.0,
+  "odom_period_s": 0.04,
+  "rc_period_s": 0.03,
+  "manual_rc_interval_s": [
+    3.6,
+    4.0
+  ],
+  "phases": [
+    {
+      "start": 0.0,
+      "end": 5.0,
+      "mode": "valid"
+    },
+    {
+      "start": 5.0,
+      "end": 5.6,
+      "mode": "wrong_body"
+    },
+    {
+      "start": 5.6,
+      "end": 6.2,
+      "mode": "stale"
+    },
+    {
+      "start": 6.2,
+      "end": 7.1,
+      "mode": "valid"
+    },
+    {
+      "start": 7.1,
+      "end": 8.01,
+      "mode": "silence"
+    }
+  ]
+}

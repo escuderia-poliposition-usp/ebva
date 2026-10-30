@@ -1,0 +1,13 @@
+fusion_node:
+  ros__parameters:
+    scan_topic: /scan
+    cloud_topic: /zed/zed_node/point_cloud/cloud_registered
+    target_frame: zed_left_camera_frame
+    queue_size: 10
+    map_frame: map
+    voxel_leaf_size: 0.05
+    map_height_tolerance: 0.05
+    map_publish_rate: 2.0
+    accumulate: true
+    map_save_path: ''
+    use_cloud: true

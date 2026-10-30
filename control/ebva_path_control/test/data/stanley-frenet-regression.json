@@ -1,0 +1,124 @@
+{
+  "cases": [
+    {
+      "lateral_error_m": 0,
+      "vx": 0,
+      "vy": 0,
+      "yaw": 0,
+      "speed": -0.6,
+      "steering_angle": 0.0
+    },
+    {
+      "lateral_error_m": 0.1,
+      "vx": 0,
+      "vy": 0,
+      "yaw": 0,
+      "speed": -0.6,
+      "steering_angle": -0.4
+    },
+    {
+      "lateral_error_m": -0.1,
+      "vx": 0,
+      "vy": 0,
+      "yaw": 0,
+      "speed": -0.6,
+      "steering_angle": 0.4
+    },
+    {
+      "lateral_error_m": 0.3,
+      "vx": 0.6,
+      "vy": 0,
+      "yaw": 0,
+      "speed": -0.6,
+      "steering_angle": -0.23501075626509688
+    },
+    {
+      "lateral_error_m": -0.3,
+      "vx": 0.6,
+      "vy": 0,
+      "yaw": 0,
+      "speed": -0.6,
+      "steering_angle": 0.23501075626509688
+    },
+    {
+      "lateral_error_m": 0.3,
+      "vx": -0.6,
+      "vy": 0,
+      "yaw": 0,
+      "speed": -0.6,
+      "steering_angle": -0.23501075626509688
+    },
+    {
+      "lateral_error_m": 0.3,
+      "vx": 0.3,
+      "vy": 0.4,
+      "yaw": 0,
+      "speed": -0.6,
+      "steering_angle": -0.30041950027058417
+    },
+    {
+      "lateral_error_m": 0.05,
+      "vx": 0.1,
+      "vy": 0,
+      "yaw": 0.2,
+      "speed": -0.6,
+      "steering_angle": -0.05145679447786691
+    },
+    {
+      "lateral_error_m": -0.05,
+      "vx": 0.1,
+      "vy": 0,
+      "yaw": -0.2,
+      "speed": -0.6,
+      "steering_angle": 0.05145679447786691
+    },
+    {
+      "lateral_error_m": 1,
+      "vx": 0.1,
+      "vy": 0,
+      "yaw": 1,
+      "speed": -0.6,
+      "steering_angle": 0.3943523506197304
+    },
+    {
+      "lateral_error_m": -1,
+      "vx": 0.1,
+      "vy": 0,
+      "yaw": -1,
+      "speed": -0.6,
+      "steering_angle": -0.3943523506197304
+    },
+    {
+      "lateral_error_m": 2,
+      "vx": 2,
+      "vy": 0,
+      "yaw": 0,
+      "speed": -0.6,
+      "steering_angle": 0.4
+    },
+    {
+      "lateral_error_m": -2,
+      "vx": 2,
+      "vy": 0,
+      "yaw": 0,
+      "speed": -0.6,
+      "steering_angle": -0.4
+    },
+    {
+      "lateral_error_m": 0,
+      "vx": 0.5,
+      "vy": 0,
+      "yaw": 3.2,
+      "speed": -0.6,
+      "steering_angle": -0.4
+    },
+    {
+      "lateral_error_m": 0,
+      "vx": 0.5,
+      "vy": 0,
+      "yaw": -3.2,
+      "speed": -0.6,
+      "steering_angle": 0.4
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+version: 1
+name: lanes
+namespace: /
+launches:
+- id: zed
+  package: ebva_sensors
+  file: launch/zed.launch.py
+- id: signs
+  package: ebva_lane_detection
+  file: launch/lane_detection.launch.py
+

@@ -1,0 +1,32 @@
+version: 1
+name: lidar_frenet_pp_software
+namespace: /lidar_frenet_pp_software
+nodes:
+- id: command_authority
+  package: ebva_vehicle_control
+  executable: command_authority
+  name: command_authority
+  parameters:
+  - package: ebva_vehicle_control
+    file: config/testing/lidar_frenet_pp_software/command_authority.yaml
+- id: vesc_backend
+  package: ebva_vehicle_control
+  executable: vesc_backend
+  name: vesc_backend
+  parameters:
+  - package: ebva_vehicle_control
+    file: config/testing/lidar_frenet_pp_software/vesc_backend.yaml
+- id: effort_steering_adapter
+  package: ebva_vehicle_control
+  executable: effort_steering_adapter
+  name: effort_steering_adapter
+  parameters:
+  - package: ebva_vehicle_control
+    file: config/testing/lidar_frenet_pp_software/effort_steering_adapter.yaml
+- id: lidar_frenet_pp
+  package: ebva_path_control
+  executable: lidar_frenet_pp
+  name: lidar_frenet_pp
+  parameters:
+  - package: ebva_path_control
+    file: config/testing/lidar_frenet_pp_software/lidar_frenet_pp.yaml

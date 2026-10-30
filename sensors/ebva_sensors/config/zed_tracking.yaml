@@ -1,0 +1,7 @@
+/**:
+  ros__parameters:
+    pos_tracking:
+      pos_tracking_enabled: true
+    mapping:
+      mapping_enabled: false
+    use_sim_time: false

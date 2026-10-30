@@ -1,0 +1,11 @@
+keyboard_adapter:
+  ros__parameters:
+    source_timeout_s: 0.2
+    input_topic: key_vel
+    expected_publisher: key_teleop
+    expected_frame: key_teleop
+    linear_full_scale: 1.0
+    angular_full_scale: 1.0
+    motor_direction: 1.0
+    steering_direction: -1.0
+    enable_external_on_startup: true
