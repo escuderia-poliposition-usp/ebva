@@ -1,58 +1,67 @@
-# ebva_cbf_control
+# ebva_cbf_control — filtros por funções de barreira
 
-Três modelos CBF preservados: yaw_rate, yaw_rate_margin e steering_tangent.
-Kernels, solver, ganhos e oráculos anteriores foram preservados nesta retirada.
+## Objetivo
 
-## Interfaces de execução
+Filtrar comandos nominais com os modelos distintos yaw_rate, yaw_rate_margin e steering_tangent. As portas estampadas identificam modelo, unidades e medidas consumidas.
 
-Produtores com contratos estampados:
-- yaw_rate_stamped
-- yaw_rate_margin_stamped
-- steering_tangent_stamped
+## Organização
 
-Filtros da interface anterior, mantidos como alternativas de algoritmo:
-- yaw_rate_filter
-- yaw_rate_margin_filter
-- steering_tangent_filter
+| Caminho | Conteúdo |
+| --- | --- |
+| [ebva_cbf_control/](ebva_cbf_control/) | Módulos Python, algoritmos e adaptadores da função. |
+| [config/](config/) | Defaults, parâmetros e fixtures de configuração. |
+| [launch/](launch/) | Entradas ROS launch para seleção/composição. |
+| [docs/](docs/) | Contratos detalhados e exemplos. |
+| [test/](test/) | Verificações e fixtures locais. |
+| [package.xml](package.xml), [setup.py](setup.py), [setup.cfg](setup.cfg) | Dependências e instalação de recursos/entry points. |
 
-A interface select.launch.py seleciona somente um filtro:
+Pontos de entrada do código:
+
+- [yaw_rate](ebva_cbf_control/yaw_rate): kernel yaw rate.
+- [yaw_rate_margin](ebva_cbf_control/yaw_rate_margin): kernel com margem.
+- [steering_tangent](ebva_cbf_control/steering_tangent): kernel em tangente de direção.
+- [yaw_rate_node.py](ebva_cbf_control/yaw_rate_node.py): porta ROS estampada yaw rate.
+
+## Interfaces
+
+`*_stamped` recebe `LaserScan`, `Odometry` e nominal tipado, publicando `CbfYawRateCommand`, `CbfYawRateMarginCommand` ou `CbfSteeringTangentCommand`. Defaults relativos: `perception/scan`, `state/odometry`, `control/autonomy/nominal`, `control/autonomy/cbf_<modelo>`; status `String` em `~/status`. `*_filter` mantém a interface anterior AutoDRIVE.
+
+## Dependências
+
+A declaração canônica está em [package.xml](package.xml).
+
+- **Pacotes do EBVA:** [ebva_control_msgs](../../interfaces/ebva_control_msgs/README.md), [ebva_control_contracts](../ebva_control_contracts/README.md).
+- **ROS e bibliotecas externas:** `nav_msgs`, `python3-numpy`, `rclpy`, `sensor_msgs`, `std_msgs`, `launch`, `launch_ros`.
+- **Build:** `ament_python`. **Testes:** `python3-pytest`.
+
+## Uso e configuração
+
+Escolha modelo/contrato antes de ligar nominal, scan e velocidade. As configurações de config/testing e as campanhas CBF são de software. Uma porta estampada recebe YAML explícito:
+
 ~~~bash
-ros2 launch ebva_cbf_control select.launch.py model:=yaw_rate
+ros2 run ebva_cbf_control yaw_rate_stamped --ros-args --params-file /dados/cbf.yaml
 ~~~
 
-rc_input e vehicle_output foram retirados. Fornecer esses argumentos produz erro
-explícito; a interface não volta a abrir serial ou publicar VESC diretamente.
-Os três *_nominal e os três *_vehicle não são mais instalados.
+`ros2 launch ebva_cbf_control select.launch.py model:=yaw_rate` inicia a interface anterior do filtro. Ela usa `/scan`, `/odom`, `/a_no`, `/w_no` e publica dois Float32 AutoDRIVE. `rc_input` e `vehicle_output` não são argumentos suportados; não há leitor serial ou ponte VESC neste pacote.
 
-## Rota de controle
+As seis entradas instaladas são yaw_rate_stamped, yaw_rate_margin_stamped, steering_tangent_stamped e os três nomes correspondentes terminados em _filter.
 
-Leitura RC, arbitragem e atuação pertencem a ebva_vehicle_control.
-Os perfis de ensaio atuais usam produtor *_stamped, adaptador específico,
-command_authority e vesc_backend. Um perfil físico depende de fontes, unidades,
-geometria e calibração qualificadas; não foi criado ou habilitado nesta retirada.
-Os filtros legados ainda publicam os dois Float32 AutoDRIVE. Esse dialeto
-não deve ser tratado como par de comandos físicos universais.
+Consulte [caracterização](docs/cbf-software-contract.md), [yaw_rate estampado](docs/yaw-rate-ros-contract.md) e [modelos margin/tangent](docs/alternate-model-ros-contracts.md). Steering_tangent filtra `tan(delta)`; modelos não são aliases. As portas estampadas rejeitam entradas inválidas/antigas/inconsistentes ou QP inadmissível. O solver Hildreth e as conversões não certificam segurança física.
 
-## Limpeza das fontes aposentadas
+## Validação
 
-Em 30/10/2026, os seis arquivos dos leitores/pontes aposentados foram removidos
-definitivamente, incluindo as cópias de documentação, build e instalação.
-Não há diretório docs/retired nem carregador de fontes históricas neste pacote.
-Os backups externos estão sob responsabilidade do usuário.
+A partir da raiz de um workspace preparado com ROS Humble e dependências instaladas:
 
-Os testes ativos de projeção dos filtros e os testes numéricos/AST dos kernels
-continuam usando os oráculos existentes. Nenhum algoritmo ativo foi removido.
-Os testes que dependiam das pontes apagadas e a dependência pyserial sem uso
-também foram retirados. O pacote instala apenas os seis executáveis listados acima.
+~~~bash
+source /opt/ros/humble/setup.bash
+colcon build --symlink-install --packages-up-to ebva_cbf_control
+source install/local_setup.bash
+colcon test --packages-select ebva_cbf_control --executor sequential --return-code-on-test-failure
+colcon test-result --verbose
+~~~
 
-## Contratos e limites
+Consulte [o guia de testes](../../docs/testing.md) para domínio isolado, campanhas e requisitos especiais. Registre falhas, erros e skips. Software não qualifica sensores, calibração ou atuação física.
 
-- [Contratos de software e caracterização](docs/cbf-software-contract.md).
-- [Contrato yaw_rate estampado](docs/yaw-rate-ros-contract.md).
-- [Contratos margin e steering_tangent](docs/alternate-model-ros-contracts.md).
-- [Atribuições e licenças](../../THIRD_PARTY_NOTICES.md).
+## Referências
 
-O solver Hildreth preservado não fornece certificação física de segurança.
-As variantes e a conversão tan(ângulo) do modelo tangent continuam distintas.
-Entradas inválidas, antigas, inconsistentes ou QP inadmissível são rejeitadas
-pelas portas estampadas. A retirada não altera esse comportamento.
+[Arquitetura](../../docs/architecture.md) · [Contratos compartilhados](../../docs/interfaces.md) · [Contribuir](../../CONTRIBUTING.md) · [Licenças e atribuições](../../THIRD_PARTY_NOTICES.md)

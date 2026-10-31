@@ -6,6 +6,15 @@ O ambiente do carro é Ubuntu 22.04, ROS 2 Humble e Python 3.10. Prepare Git,
 compilador/CMake, colcon e uma ferramenta compatível com o formato `.repos`.
 O EBVA não instala ou atualiza JetPack, kernel ou SDKs do host.
 
+Prepare o underlay conforme a [instalação oficial do ROS Humble](https://docs.ros.org/en/humble/Installation.html).
+O [tutorial de instalação na Wiki](https://github.com/escuderia-poliposition-usp/ebva/wiki/Instalacao)
+explica o percurso e os resultados esperados. A distinção entre PC/WSL e Jetson
+está em [ambientes](https://github.com/escuderia-poliposition-usp/ebva/wiki/Ambientes-PC-e-Jetson).
+
+Underlay é a base ROS; overlay é a instalação deste workspace sobre essa base.
+Carregue /opt/ros/humble/setup.bash e depois install/local_setup.bash no terminal
+que usará o produto. Confira ros2 pkg prefix para evitar outro overlay do mesmo pacote.
+
 As dependências ROS/Python ficam nos manifestos de cada pacote. A composição
 completa utiliza VESC, teleop_tools, urg_node2, Nav2, slam_toolbox,
 robot_localization e bibliotecas de imagem/nuvens. O wrapper ZED requer SDK
@@ -37,6 +46,11 @@ Instale os requisitos da composição escolhida. Em host com rosdep preparado,
 pendentes. SDK ZED, backend neural e simuladores seguem os respectivos provedores
 e os pacotes consumidores.
 
+O backend YOLO importa PyTorch/Ultralytics no Python do nó; colcon não os instala.
+device aceita cpu ou cuda:0, que exige compatibilidade com o host/JetPack.
+As dependências opcionais devem estar preparadas para qualquer pacote incluído
+no build; escolher um perfil de execução não as remove do manifesto.
+
 ## Construir e carregar
 
 Depois de preparar as dependências:
@@ -58,6 +72,19 @@ source install/local_setup.bash
 `--packages-select` seleciona somente os nomes informados; dependências precisam
 estar instaladas. Reconstrua também os consumidores afetados por mudanças em
 mensagens ou bibliotecas. Entry points, recursos, C++ e IDL exigem build.
+
+ebva_bringup declara as famílias básicas de sensores, localização e percepção;
+construí-lo com --packages-up-to também inclui suas dependências locais.
+Para uma primeira verificação restrita às interfaces, use:
+
+~~~bash
+colcon build --symlink-install --packages-up-to ebva_control_msgs lane_msgs ebva_control_contracts
+source install/local_setup.bash
+ros2 interface show lane_msgs/msg/LaneBoundaries
+~~~
+
+Esse recorte não instala todo o bringup. Para ampliar o workspace, prepare as
+dependências das novas funções e construa os respectivos pacotes/consumidores.
 
 ## Conferir
 

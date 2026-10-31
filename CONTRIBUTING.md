@@ -47,6 +47,10 @@ A documentação técnica acompanha o código; a Wiki contém tutoriais com link
 para a referência. Notas pessoais de trabalho ficam fora da documentação
 distribuída.
 
+O [padrão documental](docs/documentation.md) define as seções dos READMEs e a
+estrutura dos tutoriais. Ao alterar interface, argumento ou configuração,
+atualize a documentação do dono e os exemplos da Wiki que o utilizam.
+
 Preserve licenças e avisos de fontes externas. Consulte
 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) e declare novas dependências
 no manifesto do pacote.

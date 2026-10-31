@@ -1,11 +1,60 @@
-# ebva_vehicle_control — aquisição, autoridade e atuação
+# ebva_vehicle_control — aquisição RC, autoridade e atuação
 
-O pacote separa aquisição RC, autoridade, adaptação de comandos e backend VESC.
-Interfaces: manual.launch.py, keyboard.launch.py, vesc_driver.launch.py,
-wheel_odometry.launch.py e navigation_adapter.launch.py. O argumento params_file
-seleciona a configuração do dono.
+## Objetivo
 
-## Manual
+Ligar RC e fontes externas ao veículo por etapas explícitas: aquisição, conversão, seleção de autoridade e backend VESC. Concentra prioridade RC, validade, habilitação e limites.
+
+## Organização
+
+| Caminho | Conteúdo |
+| --- | --- |
+| [ebva_vehicle_control/](ebva_vehicle_control/) | Módulos Python, algoritmos e adaptadores da função. |
+| [config/](config/) | Defaults, parâmetros e fixtures de configuração. |
+| [launch/](launch/) | Entradas ROS launch para seleção/composição. |
+| [docs/](docs/) | Contratos detalhados e exemplos. |
+| [test/](test/) | Verificações e fixtures locais. |
+| [package.xml](package.xml), [setup.py](setup.py), [setup.cfg](setup.cfg) | Dependências e instalação de recursos/entry points. |
+
+Pontos de entrada do código:
+
+- [nodes.py](ebva_vehicle_control/nodes.py): aquisição, autoridade e backend ROS.
+- [stamped_adapter.py](ebva_vehicle_control/stamped_adapter.py): base dos adaptadores estampados.
+- [keyboard_adapter.py](ebva_vehicle_control/keyboard_adapter.py): teclado com validade e seleção.
+
+## Interfaces
+
+Aquisição `RcInput` → autoridade `SelectedControl` → backend eRPM/servo.
+Adaptadores recebem os contratos dos controladores e entregam `ActuatorCommand`.
+Os nomes abaixo são relativos: no perfil manual, recebem o namespace `/ebva`.
+
+| Interface | Tipo e papel |
+| --- | --- |
+| `rc/input` | `ebva_control_msgs/RcInput`, aquisição para a autoridade |
+| `control/autonomy/actuators` | `ActuatorCommand`, fonte externa para a autoridade |
+| `control/selected` | `SelectedControl`, seleção e motivo para o backend |
+| `commands/motor/speed` | `std_msgs/Float64`, eRPM |
+| `commands/servo/position` | `std_msgs/Float64`, posição normalizada [0,1] |
+| `control/set_autonomy_enabled` | `std_srvs/SetBool`, seleção do canal externo |
+| `control/set_actuation_enabled` | `std_srvs/SetBool`, habilitação do backend |
+| `control/status`, `control/backend_status` | `diagnostic_msgs/DiagnosticArray` |
+
+Launches públicos: manual.launch.py, keyboard.launch.py, vesc_driver.launch.py,
+wheel_odometry.launch.py e navigation_adapter.launch.py. params_file seleciona
+a configuração do dono; teclado também aceita vehicle_params_file e key_params_file.
+
+## Dependências
+
+A declaração canônica está em [package.xml](package.xml).
+
+- **Pacotes do EBVA:** [ebva_control_contracts](../ebva_control_contracts/README.md), [ebva_control_msgs](../../interfaces/ebva_control_msgs/README.md).
+- **ROS e bibliotecas externas:** `rclpy`, `geometry_msgs`, `key_teleop`, `ackermann_msgs`, `std_msgs`, `std_srvs`, `diagnostic_msgs`, `python3-serial`, `python3-yaml`, `launch`, `launch_ros`, `ament_index_python`, `vesc_driver`, `vesc_msgs`, `vesc_ackermann`.
+- **Build:** `ament_python`. **Testes:** `python3-pytest`.
+
+VESC e key_teleop vêm de [dependencies.repos](../../dependencies.repos). Serial exige porta/permissões, teclado exige TTY e conversões físicas exigem calibração explícita.
+
+## Uso e configuração
+
+### Manual
 
 ~~~bash
 ros2 launch ebva_bringup bringup.launch.py profile:=manual check_only:=true
@@ -31,7 +80,7 @@ Sem check_only, este comando abre hardware e permite atuação:
 ros2 launch ebva_bringup bringup.launch.py profile:=manual
 ~~~
 
-## Prioridade e unidades
+### Prioridade e unidades
 
 RC válido assume o par motor/direção. Com autonomia off, neutro aplica zero e
 centro configurado. Com autonomia on, voltar ao neutro retoma o comando externo
@@ -46,7 +95,7 @@ Portas, polaridades, centro e limites pertencem à configuração do veículo.
 Não altere esses valores para tornar uma fixture aparentemente compatível.
 Veja [autoridade](../../docs/command-authority.md).
 
-## Teclado com RC prioritário
+### Teclado com RC prioritário
 
 ~~~bash
 ros2 launch ebva_bringup bringup.launch.py profile:=keyboard
@@ -79,11 +128,11 @@ Configurações deste pacote:
 - config/keyboard_adapter.yaml: escalas, polaridades, lease e seleção inicial.
 - config/key_teleop.yaml: taxas e saída estampada do fornecedor.
 
-Keyboard.launch.py aceita params_file, vehicle_params_file e key_params_file.
+keyboard.launch.py aceita params_file, vehicle_params_file e key_params_file.
 Os três recursos pertencem ao pacote; a configuração EBVA não precisa ser
 instalada dentro do fornecedor.
 
-## Adaptadores autônomos
+### Adaptadores autônomos
 
 Métodos produzem contratos próprios: Ackermann, DriveEffort, FTG/PD,
 esforço/ângulo ou modelos CBF. Adaptadores específicos ligam esses contratos
@@ -99,7 +148,7 @@ supervisor_software o exercita com autoridade/backend sintéticos, sem driver.
 Os perfis operacionais supervisor_* iniciam só o controlador e não habilitam
 essa cadeia física implicitamente.
 
-## Publicação direta de ensaio
+### Publicação direta de ensaio
 
 ~~~bash
 ros2 launch ebva_bringup bringup.launch.py profile:=direct_commands check_only:=true
@@ -118,13 +167,22 @@ Esse modo não oferece prioridade RC, lease ou desarme pelo backend.
 Os limites internos do driver continuam aplicados. Não execute outra cadeia
 de atuação ao lado. Abrir o driver pode reposicionar o servo.
 
-## Build e testes
+## Validação
+
+A partir da raiz de um workspace preparado com ROS Humble e dependências instaladas:
 
 ~~~bash
-colcon build --packages-up-to ebva_vehicle_control --symlink-install
+source /opt/ros/humble/setup.bash
+colcon build --symlink-install --packages-up-to ebva_vehicle_control
 source install/local_setup.bash
-colcon test --packages-select ebva_vehicle_control
+colcon test --packages-select ebva_vehicle_control --executor sequential --return-code-on-test-failure
 colcon test-result --verbose
 ~~~
 
 Testes/campanhas sintéticas não qualificam RF, watchdog, frenagem ou calibração.
+
+Consulte [o guia de testes](../../docs/testing.md) para domínio isolado, campanhas e requisitos especiais. Registre falhas, erros e skips. Software não qualifica sensores, calibração ou atuação física.
+
+## Referências
+
+[Arquitetura](../../docs/architecture.md) · [Contratos compartilhados](../../docs/interfaces.md) · [Contribuir](../../CONTRIBUTING.md) · [Licenças e atribuições](../../THIRD_PARTY_NOTICES.md)
