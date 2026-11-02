@@ -74,6 +74,25 @@ O pacote mantém licença Apache-2.0.
 
 Consulte [o guia de testes](../../docs/testing.md) para domínio isolado, campanhas e requisitos especiais. Registre falhas, erros e skips. Software não qualifica sensores, calibração ou atuação física.
 
+## Fontes externas de modelos
+
+O pacote consome checkpoints de detecção PyTorch (.pt), sem importar código do
+projeto de treino. Para a campanha RoboRace 2026, notebooks e procedência ficam
+no repositório privado
+[traffic-perception-training](https://github.com/escuderia-poliposition-usp/traffic-perception-training).
+O acesso ao repositório de treino não é necessário em runtime.
+
+A entrega contém o checkpoint externo e um registro de dataset, inicialização,
+resolução, confiança escolhida na validação e resultados. Configure model_path,
+imgsz, confidence e device; ajuste tópicos/QoS ao ambiente. Não adicionar pesos
+ao Git nem substituir defaults por um checkpoint de teste.
+
+A campanha usa IDs 0–8 nesta ordem: go_straight, green_light, no_left_turn,
+no_right_turn, no_straight, red_light, turn_left, turn_right, yellow_light.
+Conferir nomes em /yolo/status e headers de entrada/saída em replay isolado
+antes de selecionar a fonte no veículo. O nó publica detecções por imagem;
+confirmação temporal e decisão de condução têm avaliação e integração próprias.
+
 ## Referências
 
 [Arquitetura](../../docs/architecture.md) · [Contratos compartilhados](../../docs/interfaces.md) · [Contribuir](../../CONTRIBUTING.md) · [Licenças e atribuições](../../THIRD_PARTY_NOTICES.md)
