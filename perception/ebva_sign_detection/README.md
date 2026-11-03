@@ -82,10 +82,23 @@ no repositório privado
 [traffic-perception-training](https://github.com/escuderia-poliposition-usp/traffic-perception-training).
 O acesso ao repositório de treino não é necessário em runtime.
 
-A entrega contém o checkpoint externo e um registro de dataset, inicialização,
-resolução, confiança escolhida na validação e resultados. Configure model_path,
-imgsz, confidence e device; ajuste tópicos/QoS ao ambiente. Não adicionar pesos
-ao Git nem substituir defaults por um checkpoint de teste.
+A fonte treinada deve entregar os arquivos abaixo fora do Git do produto:
+
+| Arquivo | Conteúdo |
+| --- | --- |
+| best.pt | Checkpoint de detecção selecionado pela validação |
+| inference.yaml | Parâmetros ROS model_path, imgsz, confidence e device |
+| README.md e relatório | Origem, versão do dataset, inicialização e resultados de avaliação |
+
+O exportador do projeto de treino produz esse pacote. Ajuste model_path ao
+armazenamento do dispositivo e complete tópicos/QoS para o ambiente. A escolha
+de modelo e confiança precede a avaliação do teste separado por cenário.
+Não substituir defaults por um checkpoint de teste de software.
+
+Os nomes são metadados do checkpoint; o backend não remapeia classes para
+compensar um modelo incompatível. Confira-os em /yolo/status antes do replay.
+Instale Torch compatível com o dispositivo/JetPack; não copie ambientes Python
+ou engines de outra arquitetura para consumir o .pt.
 
 A campanha usa IDs 0–8 nesta ordem: go_straight, green_light, no_left_turn,
 no_right_turn, no_straight, red_light, turn_left, turn_right, yellow_light.
